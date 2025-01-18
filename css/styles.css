@@ -1,0 +1,168 @@
+:root {
+    --color-primario: #64A6BD;
+    --color-secundario: #90A8C3;
+    --color-acento: #F4CAE0;
+    --color-fondo: #D7B9D5;
+    --color-texto: #333333;
+}
+
+/* Configuración global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    text-align: justify;
+    color: var(--color-texto)
+}
+
+
+form.busqueda input[type="search"] {
+    font-family: 'Quicksand', sans-serif; /* Aplica la fuente Quicksand */
+    font-size: 16px; /* Tamaño de la fuente */
+    padding: 5px 24px; /* Mismo padding que el botón */
+    border: 1px solid #333; /* Borde del mismo grosor que el botón */
+    border-radius: 6px; /* Bordes redondeados, igual que el botón */
+    background-color: #f9f9f9; /* Color de fondo claro */
+    width: 100%; /* El campo ocupa el 100% del ancho disponible */
+    box-sizing: border-box; /* Asegura que el padding no afecte al ancho total */
+    transition: all 0.1s ease; /* Transición suave para el cambio de estilo al hacer foco */
+}
+
+/* Estilo cuando el campo de búsqueda tiene el foco (es seleccionado) */
+form.busqueda input[type="search"]:focus {
+    border-color: #64A6BD; /* Cambia el color del borde al hacer foco */
+    outline: none; /* Elimina el contorno por defecto del navegador */
+}
+
+/* Estilo para el botón de búsqueda */
+form.busqueda button {
+    font-family: 'Quicksand', sans-serif; /* Usa la misma fuente que el input */
+    font-size: 16px;
+    padding: 5px 24px;
+    border: 1px solid #333; /* Borde del mismo grosor que el input */
+    border-radius: 6px; /* Bordes redondeados */
+    background-color: #64A6BD; /* Fondo color */
+    color: white; /* Texto blanco */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: all 0.1s ease; /* Efecto suave de transición */
+}
+
+/* Efecto hover para el botón */
+form.busqueda button:hover {
+    background-color: var(--color-texto); /* Cambia el color de fondo cuando se pasa el ratón */
+}
+
+/* Asegurarse de que el formulario tenga un margen adecuado */
+form.busqueda {
+    display: flex; /* Usa flexbox para alinear los elementos */
+    gap: 10px; /* Espacio entre el input y el botón */
+    align-items: center; /* Alinea los elementos verticalmente */
+    max-width: 600px; /* Limita el tamaño máximo del formulario */
+
+}
+
+body {
+    background-image: url(/assets/backgrounds/);
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--color-acento);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+header {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background-color: var(--color-secundario);
+    padding: 0 60px;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 200px;
+}
+
+header a {
+    display: inline-block;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+header a:hover {
+    color: var(--color-acento);
+    transform: scale(1.05);
+}
+
+.navegacion ul {
+    display: flex;
+    gap: 40px
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.brand .logo {
+    display: flex;
+    margin: 0 auto;
+    padding-top: 200px;
+    width: 900px;
+}
+
+.brand h3, .brand p {
+    width: 900px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.brand h3 {
+    text-align: center;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(/assets/backgrounds/sssurf.svg);
+    background-size: 600%;
+    background-position: 40% 99px;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.main-section {
+    height: 250px;
+}
+
+.newsletter {
+    height: 250px;
+}
+
+footer {
+    background-color: var(--color-fondo);
+    display: Flex;
+    height: 200px;
+    padding: 20px 100px;
+}
