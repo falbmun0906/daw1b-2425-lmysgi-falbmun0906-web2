@@ -293,20 +293,20 @@ main {
   
   /* Posicionamiento personalizado para los artículos */
   .articulo:nth-child(1) {
-    top: 250px;
-    left: 25%;
+    top: 350px;
+    left: 15%;
     transform: rotate(-5deg);
   }
   
   .articulo:nth-child(2) {
-    top: 0;
+    top: 100px;
     left: 45%;
     transform: rotate(1deg);
   }
   
   .articulo:nth-child(3) {
-    top: 250px;
-    right: 25%;
+    top: 450px;
+    right: 15%;
     transform: rotate(10deg);
   }
 
