@@ -115,13 +115,11 @@ header a:hover {
     gap: 40px
 }
 
-
-
 .brand {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Alinea los elementos verticalmente */
-    align-items: center;     /* Alinea los elementos horizontalmente */
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     margin: 0 auto;
     padding: 0 60px;
@@ -151,27 +149,26 @@ header a:hover {
     max-width: 900px;
 }
 
-/* Definir una única animación que combine el movimiento y la rotación */
 @keyframes movimiento-balanceo {
     0% {
-        transform: translateX(0) rotate(-15deg); /* Inicia en la posición inicial, sin rotación */
+        transform: translateX(0) rotate(-25deg);
     }
     50% {
-        transform: translateX(-150%) rotate(15deg); /* Se mueve hacia la izquierda y balancea un poco */
+        transform: translateX(-600%) rotate(25deg);
     }
     100% {
-        transform: translateX(0) rotate(-15deg); /* Se mueve completamente a la izquierda y vuelve a la posición original */
+        transform: translateX(0) rotate(-25deg);
     }
 }
 
-/* Contenedor para las imágenes */
+
 .perros {
-    display: flex; /* Alinea las imágenes en fila */
-    justify-content: flex-start; /* Alinea las imágenes al principio */
+    display: flex;
+    justify-content: flex-start; 
     align-items: center;
-    overflow: hidden; /* Esconde las imágenes que se salen del contenedor */
+    overflow: hidden;
     position: relative;
-    width: 90%; /* Ocupa todo el ancho disponible */
+    width: 90%;
     max-width: 875px;
     height: 100px;
     z-index: 2;
@@ -179,20 +176,18 @@ header a:hover {
 
 /* Barras laterales */
 
-
 .perros::before, .perros::after {
     content: "";
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 20px; /* Ancho de las barras */
+    width: 20px;
     background-color: var(--color-fondo);
 }
 
 .perros::after {
-    right: 0; /* Barra en el lado derecho */
+    right: 0;
 }
-
 
 /* Contenedor de las imágenes duplicadas */
 .perros-wrapper {
@@ -201,17 +196,17 @@ header a:hover {
     width: 200%; /* El contenedor será el doble de ancho que el visible */
 }
 
-/* Estilo para las imágenes dentro del contenedor */
+
 .perros img {
-    width: 90px; /* Ajusta el ancho de las imágenes */
+    width: 90px;
     height: 90px;
-    animation: movimiento-balanceo 15s linear infinite; /* Animación combinada de movimiento y rotación */
+    animation: movimiento-balanceo 45s linear infinite;
     z-index: 1;
 }
 
 .brand h3, .brand p {
-    text-align: center; /* Alinea el texto dentro del h3 y p */
-    margin: 0 auto;     /* Asegura que se centren dentro del contenedor */
+    text-align: center;
+    margin: 0 auto;
     width: 900px;
 }
 
@@ -240,7 +235,7 @@ footer {
     justify-content: space-between;
     height: 200px;
     padding: 30px 100px;
-    z-index: 1;  /* Asegura que el contenido del footer esté encima */
+    z-index: 1;
     position: relative;
 }
 
