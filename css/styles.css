@@ -29,13 +29,15 @@ p {
     color: var(--color-texto)
 }
 
-/* ESTO DE MOMENTO NO LO ESTOY USANDO
-
-form.busqueda input[type="search"] {
+/* Estilo para todos los campos de entrada de formularios (incluyendo email, búsqueda, etc.) */
+input[type="email"],
+input[type="text"],
+input[type="search"],
+textarea {
     font-family: 'Quicksand', sans-serif;
-    font-size: 16px;
+    font-size: 22px;
     padding: 5px 24px;
-    border: 1px solid #333;
+    border: 2px solid var(--color-fondo);
     border-radius: 6px;
     background-color: #f9f9f9;
     width: 100%;
@@ -43,36 +45,45 @@ form.busqueda input[type="search"] {
     transition: all 0.1s ease;
 }
 
-
-form.busqueda input[type="search"]:focus {
-    border-color: #64A6BD;
+/* Estilo para los campos de entrada al ser enfocados */
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+    border-color: var(--color-secundario);
     outline: none;
 }
 
-form.busqueda button {
+/* Estilo para los botones en formularios */
+button,
+input[type="submit"],
+input[type="button"] {
     font-family: 'Quicksand', sans-serif;
-    font-size: 16px;
+    font-size: 22px;
     padding: 5px 24px;
-    border: 1px solid #333;
+    border: 2px solid var(--color-fondo);
     border-radius: 6px;
-    background-color: #64A6BD;
+    background-color: var(--color-secundario);
     color: white;
     cursor: pointer;
     transition: all 0.1s ease;
 }
 
-form.busqueda button:hover {
-    background-color: var(--color-texto);
+/* Efecto hover para los botones */
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background-color: var(--color-fondo);
+
 }
 
-form.busqueda {
+/* Estilo para formularios*/
+form {
     display: flex;
     gap: 10px;
     align-items: center;
     max-width: 600px;
-
 }
-*/
 
 body {
     font-family: 'Quicksand', sans-serif;
@@ -91,6 +102,22 @@ header {
     background-color: var(--color-secundario);
     padding: 0 60px;
     justify-content: space-between;
+}
+
+.header-background {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../assets/backgrounds/sssurf.svg);
+    background-size: 600%;
+    background-position: 49% 99px;
+    background-repeat: no-repeat;
+    z-index: -1;
+    min-width: 1245px;
+    animation: moveBackground 1.0s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;; /* Aplica la animación */
 }
 
 .logo {
@@ -115,6 +142,11 @@ header a:hover {
     gap: 40px
 }
 
+main {
+    position: relative;
+    z-index: 2;  /* o un valor superior */
+}
+
 .brand {
     display: flex;
     flex-direction: column;
@@ -127,19 +159,11 @@ header a:hover {
     z-index: 2;
 }
 
-.brand::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url(../assets/backgrounds/sssurf.svg);
-    background-size: 600%;
-    background-position: 40% 99px;
-    background-repeat: no-repeat;
-    z-index: -2;
-    min-width: 1245px;
+.brand h1 {
+    font-family: "Railey-PersonalUse";
+    font-size: 8rem;
+    color: white;
+    font-weight: lighter;
 }
 
 .brand .logo {
@@ -172,6 +196,17 @@ header a:hover {
     max-width: 875px;
     height: 100px;
     z-index: 2;
+    animation: expandirPerros 1.2s ease-in-out forwards;
+    will-change: width;
+}
+
+@keyframes expandirPerros {
+    0% {
+        width: 40px;
+    }
+    100% {
+        width: calc(100% - 40px);
+    }
 }
 
 /* Barras laterales */
@@ -222,21 +257,157 @@ header a:hover {
 }
 
 .main-section {
-    height: 250px;
-}
+    position: relative;
+    height: 800px;
+    padding: 20px;
+    overflow: hidden; /* Asegura que no desborden */
+    z-index: 1;
+  }
+  
+  .articulo {
+    width: 300px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    /*background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform-origin: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;*/
+  }
+  
+  .articulo img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  /* .articulo:hover {
+    transform: scale(1.1) rotate(0deg);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }*/
+  
+  /* Posicionamiento personalizado para los artículos */
+  .articulo:nth-child(1) {
+    top: 250px;
+    left: 25%;
+    transform: rotate(-5deg);
+  }
+  
+  .articulo:nth-child(2) {
+    top: 0;
+    left: 45%;
+    transform: rotate(1deg);
+  }
+  
+  .articulo:nth-child(3) {
+    top: 250px;
+    right: 25%;
+    transform: rotate(10deg);
+  }
 
 .newsletter {
-    height: 400px;
-}
-
-footer {
-    background-color: var(--color-fondo);
     display: flex;
     justify-content: space-between;
-    height: 200px;
-    padding: 30px 100px;
+    margin: 0 auto;
+    margin-bottom: 150px;
+    position: relative;
+    max-width: 1100px;
+    padding: 30px;
+    border: 3px solid;
+    border-radius: 25px;
+    border-color: var(--color-fondo);
+}
+
+.newsletter::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #90A8C3;
+    opacity: 0.8; /* Opacidad del fondo */
+    border-radius: 22px; /* Asegura que el fondo tenga las mismas esquinas redondeadas */
+    z-index: -1; /* Asegura que el pseudo-elemento esté debajo del contenido */
+}
+
+.newsletter-izquierda, .newsletter-derecha {
+    flex: 1;
+}
+
+.newsletter-izquierda {
+    display: flex;
+    gap: 35px;
+}
+
+.newsletter img {
+    width: 150px;
+    height: auto;
+    object-fit:contain;
+}
+
+.newsletter h1 {
+    font-family: "Railey-PersonalUse";
+    font-size: 3rem;
+    color: white;
+    font-weight: lighter;
+}
+
+.newsletter h3 {
+    margin-bottom: 9px;
+}
+
+.newsletter i {
+    color: white; /* Color blanco para el ícono */
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+    font-size: 20px; /* Tamaño del ícono */
+}
+
+.newsletter-derecha {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    font-size: 0.8rem;
+    gap: 10px;
+}
+
+@media (max-width: 1168px) {
+    .newsletter {
+      flex-direction: column; /* Cambia la dirección de los elementos para apilarse verticalmente */
+      width: 600px;
+      gap: 30px;
+      padding: 20px;
+      margin-bottom: 100px; /* Ajusta el margen inferior */
+    }
+  
+    .newsletter-izquierda, .newsletter-derecha {
+      flex: none; /* Permite que los divs ocupen el espacio completo */
+      margin: 0 auto;
+      width: 85%; /* Asegura que ocupen el 100% de su contenedor */
+      padding-top: 0px;
+    }
+  
+    .newsletter h1 {
+      font-size: 4rem; /* Reduce el tamaño de la fuente */
+    }
+
+  }
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    height: 250px;
+    padding: 30px 200px;
+    padding-bottom: 150px;
     z-index: 1;
     position: relative;
+    background-color: var(--color-fondo);
 }
 
 .footer-background {
@@ -248,11 +419,21 @@ footer {
     bottom: 50%;
     background-image: url(../assets/backgrounds/sssurf2.svg);
     background-size: 600%;
-    background-position: 40% 0px;
+    background-position: 49% 0px;
     background-repeat: no-repeat;
     z-index: -1;
     transform: rotate(180deg);
-    min-width: 1260px;
+    min-width: 1550px;
+    animation: moveBackground 1.0s cubic-bezier(0.25, 0.8, 0.25, 1) forwards; /* Aplica la animación */
+}
+
+@keyframes moveBackground {
+    from {
+        background-position: 37% 0px; /* Posición inicial */
+    }
+    to {
+        background-position: 40% 0px; /* Posición final */
+    }
 }
 
 .footer-links ul {
