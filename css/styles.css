@@ -4,6 +4,8 @@
     --color-acento: #F4CAE0;
     --color-fondo: #D7B9D5;
     --color-texto: #333333;
+    --fuente-1: 'Quicksand', sans-serif;
+    --fuente-2: "Railey-PersonalUse";
 }
 
 /* Configuración global */
@@ -90,6 +92,8 @@ body {
     background-color: var(--color-acento);
     color: var(--color-texto);
     line-height: 1.6;
+    background-image: url(../assets/backgrounds/liquid-cheese.svg);
+    background-size: cover;
 }
 
 header {
@@ -159,13 +163,6 @@ main {
     z-index: 2;
 }
 
-.brand h1 {
-    font-family: "Railey-PersonalUse";
-    font-size: 8rem;
-    color: white;
-    font-weight: lighter;
-}
-
 .brand .logo {
     display: flex;
     margin: 0 auto;
@@ -220,6 +217,10 @@ main {
     background-color: var(--color-fondo);
 }
 
+.perros::before {
+    background-color: var(--color-secundario);
+}
+
 .perros::after {
     right: 0;
 }
@@ -257,58 +258,99 @@ main {
 }
 
 .main-section {
-    position: relative;
-    height: 800px;
-    padding: 20px;
-    overflow: hidden; /* Asegura que no desborden */
-    z-index: 1;
-  }
-  
-  .articulo {
-    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 100px 100px;
+    gap: 50px;
+    margin: 20px auto;
+    font-family: var(--fuente-1);
+    color: white;
+    font-size: 1.3rem;
+    font-weight: lighter;
+    
+}
+
+/* .main-section-background1 {
+    content: "";
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 49.9%;
+    background-image: url(../assets/backgrounds/sssurf.svg);
+    background-size: 500%;
+    background-position: 30% 5px;
+    background-repeat: no-repeat;
+    z-index: -1;
+    transform: rotate(180deg);
+    min-width: 1550px;
+    animation: moveBackground 1.0s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.main-section-background2 {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../assets/backgrounds/sssurf.svg);
+    background-size: 500%;
+    background-position: 30% 5px;
+    background-repeat: no-repeat;
+    z-index: -2;
+    min-width: 1550px;
+    animation: moveBackground 1.0s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+} */
+
+
+.articulo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    padding: 15px;
-    /*background-color: white;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transform-origin: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;*/
-  }
-  
-  .articulo img {
+    max-width: 250px;
+    gap: 30px;
+    margin: 0 auto;
+}
+
+.articulo h3 {
+    border-bottom:solid 15px var(--color-secundario); /* Cambia el color y grosor según lo necesites */
+    display: inline-block;
+    margin-bottom: 0;
+    padding-bottom: 4px;
+    line-height: 0; /* Elimina cualquier espacio adicional de línea */
+    font-size: 2.2rem;;
+}
+
+.articulo img {
     width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-  
-  /* .articulo:hover {
-    transform: scale(1.1) rotate(0deg);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  }*/
-  
-  /* Posicionamiento personalizado para los artículos */
-  .articulo:nth-child(1) {
-    top: 350px;
-    left: 15%;
-    transform: rotate(-5deg);
-  }
-  
-  .articulo:nth-child(2) {
-    top: 100px;
-    left: 45%;
-    transform: rotate(1deg);
-  }
-  
-  .articulo:nth-child(3) {
-    top: 450px;
-    right: 15%;
-    transform: rotate(10deg);
-  }
+    transform: scale(1); /* Estado inicial normal */
+    transition: transform 0.3s ease; /* Transición al entrar/salir del hover */
+}
+
+.articulo img:hover {
+    animation: balanceo 1.5s cubic-bezier(0.42, 0, 0.58, 1) 1; /* Animación más fluida */
+    transform: scale(1.1)
+}
+
+@keyframes balanceo {
+    0% {
+        transform: scale(1.1) rotate(0deg); /* Comienza recto */
+    }
+    20% {
+        transform: scale(1.1) rotate(-7deg); /* Inclina más a la izquierda */
+    }
+    50% {
+        transform: scale(1.1) rotate(4deg); /* Vuelve un poco a la derecha */
+    }
+    70% {
+        transform: scale(1.1) rotate(-3deg); /* Pequeño giro a la izquierda */
+    }
+    100% {
+        transform: scale(1.1) rotate(0deg); /* Regresa recto */
+    }
+}
+
 
 .newsletter {
     display: flex;
@@ -319,8 +361,8 @@ main {
     max-width: 1100px;
     padding: 30px;
     border: 3px solid;
-    border-radius: 25px;
-    border-color: var(--color-fondo);
+    border-radius: 15px;
+    border-color: var(--color-acento);
 }
 
 .newsletter::before {
@@ -330,9 +372,9 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #90A8C3;
-    opacity: 0.8; /* Opacidad del fondo */
-    border-radius: 22px; /* Asegura que el fondo tenga las mismas esquinas redondeadas */
+    background-color: var(--color-fondo);
+    opacity: 0.7; /* Opacidad del fondo */
+    border-radius: 12px; /* Asegura que el fondo tenga las mismas esquinas redondeadas */
     z-index: -1; /* Asegura que el pseudo-elemento esté debajo del contenido */
 }
 
@@ -407,10 +449,10 @@ footer {
     padding-bottom: 150px;
     z-index: 1;
     position: relative;
-    background-color: var(--color-fondo);
+    /* background-color: var(--color-fondo); */
 }
 
-.footer-background {
+/* .footer-background {
     content: "";
     position: absolute;
     top: -450%;
@@ -424,8 +466,8 @@ footer {
     z-index: -1;
     transform: rotate(180deg);
     min-width: 1550px;
-    animation: moveBackground 1.0s cubic-bezier(0.25, 0.8, 0.25, 1) forwards; /* Aplica la animación */
-}
+    animation: moveBackground 1.0s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+} */
 
 @keyframes moveBackground {
     from {
