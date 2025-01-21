@@ -148,14 +148,41 @@ header a {
     gap: 2vw;
 }
 
+@media (max-width: 945px) {
+    .header {
+        padding-top: 20px;
+        flex-direction: column;
+    }
+
+    .header__background {
+        top: 7%;
+        left: -20%;
+        background-size: 600%;
+    }
+
+    .header__nav ul {
+        font-size: 1.3rem;
+        font-weight: 400;
+        gap: 1vw;
+    }
+    .header__logo {
+        width: 200px;
+        margin-top: 25px;
+    }
+}
+
+main {
+    padding: 0 15vw;
+}
+
 .main__brand {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     margin: 0 auto;
-    padding: 0 150px;
     padding-top: 100px;
+    min-width: 400px;
 }
 
 .main__brand .main__brand-logo {
@@ -243,7 +270,7 @@ header a {
 .main__products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 100px 15vw;
+    padding: 100px 0;
     gap: 50px;
     margin: 20px auto;
     font-family: var(--fuente-1);
@@ -278,22 +305,26 @@ header a {
 }
 
 .product img:hover {
-    animation: balanceo 1.5s cubic-bezier(0.42, 0, 0.58, 1) 1; /* Animación más fluida */
+    animation: balanceo 1.0s cubic-bezier(0.42, 0, 0.58, 1) 1; /* Animación más fluida */
     transform: scale(1.1)
+}
+
+@media (max-width: 945px) {
+    .main__products {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @keyframes balanceo {
     0% {
         transform: scale(1.1) rotate(0deg); /* Comienza recto */
     }
-    20% {
+    33% {
         transform: scale(1.1) rotate(-7deg); /* Inclina más a la izquierda */
     }
-    50% {
+    66% {
         transform: scale(1.1) rotate(4deg); /* Vuelve un poco a la derecha */
-    }
-    70% {
-        transform: scale(1.1) rotate(-3deg); /* Pequeño giro a la izquierda */
     }
     100% {
         transform: scale(1.1) rotate(0deg); /* Regresa recto */
