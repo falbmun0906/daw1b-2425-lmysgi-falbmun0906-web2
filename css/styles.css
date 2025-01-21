@@ -89,6 +89,7 @@ form {
 
 body {
     font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
     background-color: var(--color-acento);
     color: var(--color-texto);
     line-height: 1.6;
