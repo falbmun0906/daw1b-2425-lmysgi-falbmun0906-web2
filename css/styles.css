@@ -3,7 +3,7 @@
     --color-secundario: #90A8C3;
     --color-acento: #F4CAE0;
     --color-fondo: #D7B9D5;
-    --color-texto: #333333;
+    --color-texto: #ffffff;
     --fuente-1: 'Quicksand', sans-serif;
     --fuente-2: "Railey-PersonalUse";
 }
@@ -268,9 +268,22 @@ main {
 }
 
 .main__products {
+    padding: 40px 0;
+}
+
+.products__title {
+    text-align: center;
+    font-family: var(--fuente-2);
+    color: var(--color-texto);
+    font-size: 6rem;
+    font-weight: lighter;
+    margin: 0 auto;
+}
+
+.products__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 100px 0;
+    padding: 40px 0;
     gap: 50px;
     margin: 0 auto;
     font-family: var(--fuente-1);
@@ -309,7 +322,7 @@ main {
 }
 
 @media (max-width: 945px) {
-    .main__products {
+    .products__list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
@@ -561,4 +574,48 @@ footer {
     .footer__apps {
         align-items: center;
     }
+}
+
+/* --------------- */
+/* PÁGINA PRODUCTS */
+/* --------------- */
+
+.main__sizes {
+    margin-bottom: 100px;
+}
+
+.main__sizes h3 {
+    margin: 0 auto;
+    text-align: center;
+    font-family: var(--fuente-2);
+    font-size: 4rem;
+    font-weight: 100;
+}
+
+.dog-image {
+    width: 100%;
+    min-width: 100px;
+}
+
+.size-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.size-table thead tr {
+    border-bottom: 4px solid var(--color-secundario); /* Solo afecta la primera fila del tbody */
+}
+
+.size-table tr {
+    border-bottom: 2px solid var(--color-secundario); /* Línea entre filas */
+}
+
+.size-table tbody tr td:first-child {
+    font-weight: bold;
+}
+
+.size-table td,
+.size-table th {
+    padding: 10px; /* Espaciado interno */
+    text-align: center;
 }
