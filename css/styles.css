@@ -826,20 +826,29 @@ footer {
 /* - PÁGINA ABOUT - */
 /* ---------------- */
 
-.map-container {
+.main__map-container {
+    margin: 0 auto;
+    padding-top: 80px;
+    filter: saturate(60%);
+    margin-bottom: 50px;
+}
+
+.google-map {
+    padding: 20px 0;
+}
+
+.main__map-container p, .main__faq p {
     font-family: var(--fuente-2);
     font-size: 3rem;
     font-weight: lighter;
-    margin: 0 auto;
-    margin-top: 50px;;
-    filter:saturate(70%);
+    border-bottom:solid 12px var(--color-primario);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    line-height: 0;
 }
 
-.map-container p {
-    border-bottom:solid 12px var(--color-primario);
-    display: inline-block;
-    margin-bottom: 0;
-    line-height: 0;
+.main__map-container p {
+    font-size: 3.5rem;
 }
 
 .google-map {
@@ -847,4 +856,9 @@ footer {
     height: 450px;
     border: none;
     border-radius: 8px;
+}
+
+.main__faq {
+
+
 }

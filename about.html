@@ -32,8 +32,8 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <section class="map-container">
+    <main class="main">
+        <section class="main__map-container">
             <p>Encuéntranos aquí :</p>
             <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345095727!2d-122.41941548468223!3d37.77492977975886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064df8d7af7%3A0x0fdd18c16f8e5c19!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1613939818852!5m2!1sen!2s" 
@@ -41,6 +41,31 @@
                 allowfullscreen=""
                 loading="lazy">
             </iframe>
+        </section>
+        <section class="main__faq">
+            <p>es como FAQ :</p>
+        </section>
+        <section class="main__newsletter">
+            <div class="newsletter__left">
+              <img class="newsletter__image" src="assets/newsletter/cat-newsletter.png" alt="Logo">
+              <div class="newsletter__benefits">
+                <h1 class="newsletter__title">Paw News</h1>
+                <h3 class="newsletter__subtitle">Lo mejor para tu mascota</h3>
+                <ul class="newsletter__list">
+                  <li class="newsletter__item"><i class="fas fa-paw"></i>Énterate de nuestras novedades</li>
+                  <li class="newsletter__item"><i class="fas fa-paw"></i>Tips para mimar a tu mascota</li>
+                  <li class="newsletter__item"><i class="fas fa-paw"></i>Descuentos irresistibles</li>
+                  <li class="newsletter__item"><i class="fas fa-paw"></i>Noticias frescas y peludas</li>
+                </ul>
+              </div>
+            </div>
+            <div class="newsletter__right">
+              <form class="newsletter__form">
+                  <input class="newsletter__input" type="email" name="email" placeholder="Dirección de e-mail" required>
+                  <button class="newsletter__button" type="submit">Regístrate</button>
+              </form>
+              <p class="newsletter__disclaimer">Al registrarte, aceptas recibir nuestras novedades, ofertas y actualizaciones por correo electrónico. Puedes cancelar tu suscripción en cualquier momento.</p>
+            </div>
         </section>
     </main>
     <footer class="footer">
