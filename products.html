@@ -27,110 +27,243 @@
             <ul>
                 <li class="header__nav-item"><a href="index.html" class="header__nav-link">Inicio</a></li>
                 <li class="header__nav-item"><a href="products.html" class="header__nav-link">Productos</a></li>
-                <li class="header__nav-item"><a href="#contacto" class="header__nav-link">Nosotros</a></li>
-                <li class="header__nav-item"><a href="#contacto" class="header__nav-link">Blog</a></li>
+                <li class="header__nav-item"><a href="about.html" class="header__nav-link">Nosotros</a></li>
+                <li class="header__nav-item"><a href="blog.html" class="header__nav-link">Blog</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+    <main class="main">
         <section class="main__products">
             <h1 class="products__title">Nuestras categorías</h1>
             <div class="products__list">
               <article class="product">
-                <img class="product__image" src="assets/categorias/salchicha-w.png" alt="Artículo 3">
+                <img class="product__image" src="assets/categorias/salchicha-w.png" alt="Disfraces">
                 <h3 class="product__category">Disfraces</h3>
               </article>
               <article class="product">
-                <img class="product__image" src="assets/categorias/borreguito2-w.png" alt="Artículo 3">
+                <img class="product__image" src="assets/categorias/borreguito2-w.png" alt="Abrigos">
                 <h3 class="product__category">Abrigos</h3>
               </article>
               <article class="product">
-                <img class="product__image" src="assets/categorias/sudadera2-w.png" alt="Artículo 3">
+                <img class="product__image" src="assets/categorias/sudadera2-w.png" alt="Sudaderas">
                 <h3 class="product__category">Sudaderas</h3>
               </article>
               <article class="product">
-                <img class="product__image" src="assets/categorias/collar2-w.png" alt="Artículo 3">
-                <h3 class="product__category">Accesorios</h3>
+                <img class="product__image" src="assets/categorias/pijama-w.png" alt="Pijamas">
+                <h3 class="product__category">Pijamas</h3>
               </article>
               <article class="product">
-                <img class="product__image" src="assets/categorias/collar2-w.png" alt="Artículo 3">
-                <h3 class="product__category">Accesorios</h3>
+                <img class="product__image" src="assets/categorias/bolso2-w.png" alt="Bolsos">
+                <h3 class="product__category">Bolsos</h3>
               </article>
               <article class="product">
-                <img class="product__image" src="assets/categorias/collar2-w.png" alt="Artículo 3">
+                <img class="product__image" src="assets/categorias/collar2-w.png" alt="Accesorios">
                 <h3 class="product__category">Accesorios</h3>
               </article>
             </div>
           </section>
+          <section class="main__featured featured">
+            <h2 class="featured__title">Novedades</h2>
+            <div class="featured__list">
+                <article class="featured__item product">
+                    <img class="product__image" src="assets/novedades/bag-galgo.png" alt="Fender Flea Sig Bass RDWRN SHP">
+                    <p class="product__rating">
+                        <i class="fa-solid fa-paw"></i>
+                        <i class="fas fa-paw"></i>
+                        <i class="fas fa-paw"></i>
+                        <i class="fas fa-paw"></i>
+                        <i class="fas fa-paw"></i>
+                        <span class="product__rating-score">(4.5)</span>
+                        <span class="product__rating-reviews">14</span>
+                    </p>
+                    <a class="product__name" href="#">Bolso Paws - Azul</a>
+                    <p class="product__price">74.90 €</p>
+                </article>
+                <article class="featured__item product">
+                    <img class="product__image" src="assets/novedades/collar-lab.png" alt="Arturia MiniLab 3 Blac">
+                    <p class="product__rating">
+                        <i class="fas fa-paw"></i>
+                        <i class="fas fa-paw"></i>
+                        <i class="fas fa-paw"></i>
+                        <i class="fas fa-paw"></i>
+                        <span class="product__rating-score">(4.4)</span>
+                        <span class="product__rating-reviews">36</span>
+                    </p>
+                    <a class="product__name" href="#">Collar Lazos - Salmón</a>
+                    <p class="product__price">25.90 €</p>
+                </article>
+                <article class="featured__item product">
+                    <img class="product__image" src="assets/novedades/mono-galgo.png" alt="Sennheiser HD 650">
+                    <p class="product__rating">
+                        <i class="fas fa-paw"></i>
+                        <i class="fas fa-paw"></i>
+                        <i class="fas fa-paw"></i>
+                        <i class="fas fa-paw"></i>
+                        <i class="fas fa-paw"></i>
+                        <span class="product__rating-score">(5.0)</span>
+                        <span class="product__rating-reviews">26</span>
+                    </p>
+                    <a class="product__name" href="#">Mono rayas - Flamenco</a>
+                    <p class="product__price">59,95 €</p>
+                </article>
+                <article class="featured__item product">
+                    <img class="product__image" src="assets/novedades/parka.png" alt="Shure SM 7 B">
+                    <p class="product__rating">
+                        <i class="fas fa-paw"></i>
+                        <i class="fas fa-paw"></i>
+                        <i class="fas fa-paw"></i>
+                        <i class="fas fa-paw"></i>
+
+                        <span class="product__rating-score">(4.2)</span>
+                        <span class="product__rating-reviews">17</span>
+                    </p>
+                    <a class="product__name" href="#">Parka reversible - Lila / Verde</a>
+                    <p class="product__price">69,95 €</p>
+                </article>
+            </div>
+        </section>
           <section class="main__sizes">
             <h3 class="sizes__title">¡Elije su talla!</h3>
-            <table class="size-table">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>
-                            <img class="dog-image" src="assets/miscelanea/Tallas/xxs.png" alt="Perro XXS">
-                            <br>XXS
-                        </th>
-                        <th>
-                            <img class="dog-image" src="assets/miscelanea/Tallas/xs.png" alt="Perro XS">
-                            <br>XS
-                        </th>
-                        <th>
-                            <img class="dog-image" src="assets/miscelanea/Tallas/s.png" alt="Perro S">
-                            <br>S
-                        </th>
-                        <th>
-                            <img class="dog-image" src="assets/miscelanea/Tallas/m.png" alt="Perro M">
-                            <br>M
-                        </th>
-                        <th>
-                            <img class="dog-image" src="assets/miscelanea/Tallas/l.png" alt="Perro L">
-                            <br>L
-                        </th>
-                        <th>
-                            <img class="dog-image" src="assets/miscelanea/Tallas/xl.png" alt="Perro XL">
-                            <br>XL
-                        </th>
-                        <th>
-                            <img class="dog-image" src="assets/miscelanea/Tallas/xxl.png" alt="Perro XXL">
-                            <br>XXL
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Peso</td>
-                        <td>Hasta 2 kg</td>
-                        <td>Hasta 4 kg</td>
-                        <td>Hasta 6 kg</td>
-                        <td>Hasta 12 kg</td>
-                        <td>Hasta 20 kg</td>
-                        <td>Hasta 30 kg</td>
-                        <td>Hasta 40 kg</td>
-                    </tr>
-                    <tr>
-                        <td>Longitud de Espalda</td>
-                        <td>20 - 25 cm</td>
-                        <td>25 - 30 cm</td>
-                        <td>30 - 40 cm</td>
-                        <td>40 - 50 cm</td>
-                        <td>50 - 60 cm</td>
-                        <td>60 - 70 cm</td>
-                        <td>70 - 80 cm</td>
-                    </tr>
-                    <tr>
-                        <td>Circunferencia</td>
-                        <td>30 - 38 cm</td>
-                        <td>38 - 46 cm</td>
-                        <td>46 - 56 cm</td>
-                        <td>56 - 66 cm</td>
-                        <td>66 - 76 cm</td>
-                        <td>76 - 86 cm</td>
-                        <td>86 - 100 cm</td>
-                    </tr>
-            </table>
-          </section>
+            <div class="sizes__table-wrapper--default">
+                <table class="sizes__table">
+                    <thead class="sizes__header">
+                        <tr class="sizes__row">
+                            <th class="sizes__cell"></th>
+                            <th class="sizes__cell">
+                                <img class="sizes__image" src="assets/miscelanea/Tallas/xxs.png" alt="Perro XXS">
+                                <br>XXS
+                            </th>
+                            <th class="sizes__cell">
+                                <img class="sizes__image" src="assets/miscelanea/Tallas/xs.png" alt="Perro XS">
+                                <br>XS
+                            </th>
+                            <th class="sizes__cell">
+                                <img class="sizes__image" src="assets/miscelanea/Tallas/s.png" alt="Perro S">
+                                <br>S
+                            </th>
+                            <th class="sizes__cell">
+                                <img class="sizes__image" src="assets/miscelanea/Tallas/m.png" alt="Perro M">
+                                <br>M
+                            </th>
+                            <th class="sizes__cell">
+                                <img class="sizes__image" src="assets/miscelanea/Tallas/l.png" alt="Perro L">
+                                <br>L
+                            </th>
+                            <th class="sizes__cell">
+                                <img class="sizes__image" src="assets/miscelanea/Tallas/xl.png" alt="Perro XL">
+                                <br>XL
+                            </th>
+                            <th class="sizes__cell">
+                                <img class="sizes__image" src="assets/miscelanea/Tallas/xxl.png" alt="Perro XXL">
+                                <br>XXL
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="sizes__body">
+                        <tr class="sizes__row">
+                            <td class="sizes__cell">Peso</td>
+                            <td class="sizes__cell">Hasta 2 kg</td>
+                            <td class="sizes__cell">Hasta 4 kg</td>
+                            <td class="sizes__cell">Hasta 6 kg</td>
+                            <td class="sizes__cell">Hasta 12 kg</td>
+                            <td class="sizes__cell">Hasta 20 kg</td>
+                            <td class="sizes__cell">Hasta 30 kg</td>
+                            <td class="sizes__cell">Hasta 40 kg</td>
+                        </tr>
+                        <tr class="sizes__row">
+                            <td class="sizes__cell">Longitud de Espalda</td>
+                            <td class="sizes__cell">20 - 25 cm</td>
+                            <td class="sizes__cell">25 - 30 cm</td>
+                            <td class="sizes__cell">30 - 40 cm</td>
+                            <td class="sizes__cell">40 - 50 cm</td>
+                            <td class="sizes__cell">50 - 60 cm</td>
+                            <td class="sizes__cell">60 - 70 cm</td>
+                            <td class="sizes__cell">70 - 80 cm</td>
+                        </tr>
+                        <tr class="sizes__row">
+                            <td class="sizes__cell">Circunferencia</td>
+                            <td class="sizes__cell">30 - 38 cm</td>
+                            <td class="sizes__cell">38 - 46 cm</td>
+                            <td class="sizes__cell">46 - 56 cm</td>
+                            <td class="sizes__cell">56 - 66 cm</td>
+                            <td class="sizes__cell">66 - 76 cm</td>
+                            <td class="sizes__cell">76 - 86 cm</td>
+                            <td class="sizes__cell">86 - 100 cm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="sizes__table-wrapper--inverted">
+                <table class="sizes__table">
+                    <thead class="sizes__header">
+                        <tr class="sizes__row">
+                            <th class="sizes__cell"></th>
+                            <th class="sizes__cell">Peso</th>
+                            <th class="sizes__cell">Longitud de Espalda</th>
+                            <th class="sizes__cell">Circunferencia</th>
+                        </tr>
+                    </thead>
+                    <tbody class="sizes__body">
+                        <tr class="sizes__row">
+                            <td class="sizes__cell">
+                                <img class="sizes__image" src="assets/miscelanea/Tallas/xxs.png" alt="Perro XXS">
+                            </td>
+                            <td class="sizes__cell">Hasta 2 kg</td>
+                            <td class="sizes__cell">20 - 25 cm</td>
+                            <td class="sizes__cell">30 - 38 cm</td>
+                        </tr>
+                        <tr class="sizes__row">
+                            <td class="sizes__cell">
+                                <img class="sizes__image" src="assets/miscelanea/Tallas/xs.png" alt="Perro XS">
+                            </td>
+                            <td class="sizes__cell">Hasta 4 kg</td>
+                            <td class="sizes__cell">25 - 30 cm</td>
+                            <td class="sizes__cell">38 - 46 cm</td>
+                        </tr>
+                        <tr class="sizes__row">
+                            <td class="sizes__cell">
+                                <img class="sizes__image" src="assets/miscelanea/Tallas/s.png" alt="Perro S">
+                            </td>
+                            <td class="sizes__cell">Hasta 6 kg</td>
+                            <td class="sizes__cell">30 - 40 cm</td>
+                            <td class="sizes__cell">46 - 56 cm</td>
+                        </tr>
+                        <tr class="sizes__row">
+                            <td class="sizes__cell">
+                                <img class="sizes__image" src="assets/miscelanea/Tallas/m.png" alt="Perro M">
+                            </td>
+                            <td class="sizes__cell">Hasta 12 kg</td>
+                            <td class="sizes__cell">40 - 50 cm</td>
+                            <td class="sizes__cell">56 - 66 cm</td>
+                        </tr>
+                        <tr class="sizes__row">
+                            <td class="sizes__cell">
+                                <img class="sizes__image" src="assets/miscelanea/Tallas/l.png" alt="Perro L">
+                            </td>
+                            <td class="sizes__cell">Hasta 20 kg</td>
+                            <td class="sizes__cell">50 - 60 cm</td>
+                            <td class="sizes__cell">66 - 76 cm</td>
+                        </tr>
+                        <tr class="sizes__row">
+                            <td class="sizes__cell">
+                                <img class="sizes__image" src="assets/miscelanea/Tallas/xl.png" alt="Perro XL">
+                            </td>
+                            <td class="sizes__cell">Hasta 30 kg</td>
+                            <td class="sizes__cell">60 - 70 cm</td>
+                            <td class="sizes__cell">76 - 86 cm</td>
+                        </tr>
+                        <tr class="sizes__row">
+                            <td class="sizes__cell">
+                                <img class="sizes__image" src="assets/miscelanea/Tallas/xxl.png" alt="Perro XXL">
+                            </td>
+                            <td class="sizes__cell">Hasta 40 kg</td>
+                            <td class="sizes__cell">70 - 80 cm</td>
+                            <td class="sizes__cell">86 - 100 cm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
     <footer class="footer">
         <div class="footer__socials">
