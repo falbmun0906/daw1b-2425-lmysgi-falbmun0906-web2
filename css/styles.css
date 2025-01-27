@@ -336,23 +336,11 @@ main {
     object-fit: cover;
 }
 
-.about-store__cta {
-    display: inline-block;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 22px;
-    padding: 5px 24px;
-    border: 2px solid var(--color-fondo);
-    border-radius: 6px;
-    background-color: var(--color-secundario);
-    color: white;
-    cursor: pointer;
-    text-decoration: none; /* Para quitar el subrayado por defecto de los enlaces */
-    transition: all 0.1s ease;
-}
-
-.about-store__cta:hover {
-    background-color: var(--color-acento); /* Para cambiar el color de fondo al pasar el ratón */
-    border-color: var(--color-acento); /* Cambiar el color del borde al pasar el ratón */
+.welcomed {
+    position: relative;
+    top: -5px;
+    font-size: 2rem;
+    transform: rotate(-25deg);
 }
 
 .about-store__image img {
