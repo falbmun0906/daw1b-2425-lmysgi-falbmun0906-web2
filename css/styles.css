@@ -8,7 +8,6 @@
     --fuente-2: "Railey-PersonalUse";
 }
 
-/* Configuración global */
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +15,7 @@
 }
 
 *::selection {
-    background-color: var(--color-acento);  /* Color de fondo del texto seleccionado */            /* Color del texto seleccionado */
+    background-color: var(--color-acento);
 }
 
 ul {
@@ -57,7 +56,6 @@ details[open] summary::before {
     
 }
 
-/* Estilo para todos los campos de entrada de formularios (incluyendo email, búsqueda, etc.) */
 input[type="email"],
 input[type="text"],
 input[type="search"],
@@ -73,7 +71,7 @@ textarea {
     transition: all 0.1s ease;
 }
 
-/* Estilo para los campos de entrada al ser enfocados */
+
 input[type="email"]:focus,
 input[type="text"]:focus,
 input[type="search"]:focus,
@@ -82,7 +80,7 @@ textarea:focus {
     outline: none;
 }
 
-/* Estilo para los botones en formularios */
+
 button,
 input[type="submit"],
 input[type="button"] {
@@ -97,7 +95,7 @@ input[type="button"] {
     transition: all 0.1s ease;
 }
 
-/* Efecto hover para los botones */
+
 button:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover {
@@ -105,7 +103,7 @@ input[type="button"]:hover {
 
 }
 
-/* Estilo para formularios*/
+
 form {
     display: flex;
     gap: 10px;
@@ -163,7 +161,7 @@ header a {
 
 .header__nav-link:hover {
     transform: scale(1.02);
-    border-bottom:solid 8px var(--color-fondo); /* Cambia el color y grosor según lo necesites */
+    border-bottom:solid 8px var(--color-fondo);
     display: inline-block;
     margin-bottom: 0;
     padding-bottom: 4px;
@@ -488,7 +486,7 @@ main {
 
 @media (max-width: 1450px) {
     .main__newsletter {
-      flex-direction: column; /* Cambia la dirección de los elementos para apilarse verticalmente */
+      flex-direction: column;
       max-width: 1000px;
       gap: 30px;
       padding: 20px;
@@ -496,9 +494,9 @@ main {
     }
   
     .newsletter__left, .newsletter__right {
-      flex: none; /* Permite que los divs ocupen el espacio completo */
+      flex: none;
       margin: 0 auto;
-      width: 85%; /* Asegura que ocupen el 100% de su contenedor */
+      width: 85%;
       padding-top: 0px;
     }
   
@@ -510,11 +508,11 @@ main {
 
 @media (max-width: 885px) {
     .main__newsletter {
-        flex-direction: column; /* Cambia la dirección de los elementos para apilarse verticalmente */
+        flex-direction: column;
         max-width: 600px;
         gap: 30px;
         padding: 30px;
-        margin-bottom: 100px; /* Ajusta el margen inferior */
+        margin-bottom: 100px;
     }
     
     .newsletter__left, .newsletter__right {
@@ -534,7 +532,7 @@ main {
     }
     
     .main__newsletter h1 {
-    font-size: 4.4rem; /* Reduce el tamaño de la fuente */
+    font-size: 4.4rem;
     }
 
     .main__newsletter img {
@@ -715,16 +713,16 @@ footer {
 
 @keyframes balanceo {
     0% {
-        transform: scale(1.1) rotate(0deg); /* Comienza recto */
+        transform: scale(1.1) rotate(0deg);
     }
     33% {
-        transform: scale(1.1) rotate(-7deg); /* Inclina más a la izquierda */
+        transform: scale(1.1) rotate(-7deg);
     }
     66% {
-        transform: scale(1.1) rotate(4deg); /* Vuelve un poco a la derecha */
+        transform: scale(1.1) rotate(4deg);
     }
     100% {
-        transform: scale(1.1) rotate(0deg); /* Regresa recto */
+        transform: scale(1.1) rotate(0deg);
     }
 }
 
@@ -758,12 +756,11 @@ footer {
     border-radius: 4px;
     min-height: 50%;
     object-fit: cover;
-    box-shadow: solid 1px black;
 }
 
 .featured__item:hover {
-    transform: scale(1.01);  /* Aumenta el tamaño en un 20% */
-    transform-origin: center;  /* Escala desde el centro del artículo */
+    transform: scale(1.01); 
+    transform-origin: center;
 }
 
 .featured__item .product__image:hover {
@@ -1029,7 +1026,7 @@ footer {
 
 .main__community__form-container h2 {
     margin-bottom: 10px;
-  }
+}
   
 
 .main__community__form-list {
@@ -1070,13 +1067,13 @@ footer {
   
   @media (max-width: 1120px) {
     .main__community__container {
-      flex-direction: column; /* Cambia disposición a columna */
+      flex-direction: column;
       width: 100%;
       margin-bottom: 30px;
     }
   
     .main__community__portrait {
-      display: none; /* Oculta la imagen */
+      display: none;
     }
   
     .main__community__form-container {
@@ -1089,7 +1086,7 @@ footer {
 
 .main__adoption__board {
     padding: 100px 0;
-  }
+}
   
   .main__adoption__title {
     font-family: var(--fuente-2);
@@ -1098,7 +1095,7 @@ footer {
     border-bottom:solid 12px var(--color-primario);
     border-radius: 4px;
     line-height: 0;
-  }
+}
   
   .main__adoption__description {
     margin-bottom: 2rem;
@@ -1107,14 +1104,14 @@ footer {
     color: var(--color-texto);
     padding: 25px 35px;
     border-bottom: solid 2px var(--color-primario);
-  }
+}
   
   .main__adoption__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
-  }
+}
   
   .main__adoption__card {
     width: 400px;
@@ -1125,35 +1122,35 @@ footer {
     display: flex;
     flex-direction: column;
     transition: all 0.1s ease;
-  }
+}
 
   .main__adoption__card:hover {
     transform: scale(1.02);
-  }
+}
   
   .main__adoption__image {
     height: 450px;
     object-fit: cover;
     filter:saturate(0.8)
-  }
+}
   
   .main__adoption__details {
     padding: 2rem;
-  }
+}
   
   .main__adoption__name {
     font-size: 2rem;
     margin-bottom: 0.5rem;
     color: var(--color-texto);
     border-bottom: solid 2px var(--color-acento);
-  }
+}
   
   .main__adoption__age {
     font-size: 1rem;
     color: var(--color-texto);
-  }
+}
   
   .main__adoption__description {
     font-size: 1.1rem;
     font-style: italic;
-  }
+}
