@@ -32,7 +32,7 @@ Cada página está diseñada con HTML5 y CSS3, aplicando estándares modernos de
 
 El repositorio tiene la siguiente estructura:
 
-![Estructura del proyecto](assets/tree.png)
+![Estructura del proyecto](assets/miscelanea/tree.png)
 
 ---
 
