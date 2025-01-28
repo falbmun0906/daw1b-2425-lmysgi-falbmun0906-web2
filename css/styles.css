@@ -1088,60 +1088,72 @@ footer {
 }
 
 .main__adoption__board {
-    padding: 2rem;
-    text-align: center;
+    padding: 100px 0;
   }
   
   .main__adoption__title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--color-primario);
+    font-family: var(--fuente-2);
+    font-weight: 100;
+    font-size: 4rem;
+    border-bottom:solid 12px var(--color-primario);
+    border-radius: 4px;
+    line-height: 0;
   }
   
   .main__adoption__description {
     margin-bottom: 2rem;
-    font-size: 1rem;
+    font-size: 1.4rem;
+    text-align: center;
     color: var(--color-texto);
+    padding: 25px 35px;
+    border-bottom: solid 2px var(--color-primario);
   }
   
   .main__adoption__container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1.5rem;
   }
   
   .main__adoption__card {
-    background-color: var(--color-fondo-secundario);
+    width: 400px;
+    background-color: var(--color-secundario);
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    text-align: left;
+    transition: all 0.1s ease;
+  }
+
+  .main__adoption__card:hover {
+    transform: scale(1.02);
   }
   
   .main__adoption__image {
-    width: 100%;
-    height: 200px;
+    height: 450px;
     object-fit: cover;
+    filter:saturate(0.8)
   }
   
   .main__adoption__details {
-    padding: 1rem;
+    padding: 2rem;
   }
   
   .main__adoption__name {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
-    color: var(--color-primario);
+    color: var(--color-texto);
+    border-bottom: solid 2px var(--color-acento);
   }
   
-  .main__adoption__age,
-  .main__adoption__description {
+  .main__adoption__age {
     font-size: 1rem;
     color: var(--color-texto);
   }
   
   .main__adoption__description {
-    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    font-style: italic;
   }
