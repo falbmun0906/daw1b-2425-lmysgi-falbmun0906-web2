@@ -168,7 +168,7 @@ Este proyecto muestra ejemplos prácticos de manipulación del DOM utilizando **
 
 La función **`selectElements`** demuestra cómo acceder a elementos del DOM mediante distintos métodos:  
 
-(Enlaza desde GitHub el enlace permanente a `selectElements`)  
+https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/5f418ced930f07b7ff1089dda3b7ae96768d37c2/js/script.js#L7-L25
 
 **Métodos utilizados:**  
 - `getElementById()`  
@@ -180,7 +180,7 @@ La función **`selectElements`** demuestra cómo acceder a elementos del DOM med
 
 La función **`addJoinButton`** crea un nuevo botón y lo añade al contenedor de la newsletter:  
 
-(Enlaza desde GitHub el enlace permanente a `addJoinButton`)  
+https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/5f418ced930f07b7ff1089dda3b7ae96768d37c2/js/script.js#L31-L46
 
 **Métodos utilizados:**  
 - `document.createElement()` — Crea un nuevo elemento.  
@@ -191,7 +191,7 @@ La función **`addJoinButton`** crea un nuevo botón y lo añade al contenedor d
 
 La función **`modifyContentAndAttributes`** cambia el texto del título de la newsletter y actualiza el placeholder del campo de email:  
 
-(Enlaza desde GitHub el enlace permanente a `modifyContentAndAttributes`)  
+https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/5f418ced930f07b7ff1089dda3b7ae96768d37c2/js/script.js#L52-L68
 
 **Métodos utilizados:**  
 - `textContent` — Modifica el contenido de texto de un elemento.  
@@ -201,7 +201,7 @@ La función **`modifyContentAndAttributes`** cambia el texto del título de la n
 
 La función **`removeFirstFAQ`** elimina el primer elemento FAQ, validando que el contenedor y el ítem existan:  
 
-(Enlaza desde GitHub el enlace permanente a `removeFirstFAQ`)  
+https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/5f418ced930f07b7ff1089dda3b7ae96768d37c2/js/script.js#L74-L91
 
 **Métodos utilizados:**  
 - `querySelector()` — Seleccionar elementos.  
@@ -212,7 +212,7 @@ La función **`removeFirstFAQ`** elimina el primer elemento FAQ, validando que e
 
 La función **`addHeaderHoverEffects`** cambia dinámicamente el color de fondo del header al pasar el ratón:  
 
-(Enlaza desde GitHub el enlace permanente a `addHeaderHoverEffects`)  
+https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/5f418ced930f07b7ff1089dda3b7ae96768d37c2/js/script.js#L97-L115
 
 **Métodos utilizados:**  
 - `addEventListener()` — Añadir eventos (`mouseover`, `mouseout`).  
