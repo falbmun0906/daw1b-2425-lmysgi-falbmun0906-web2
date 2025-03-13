@@ -156,3 +156,68 @@ Esto resolvió el problema porque:
 
 La ruta relativa ../ indica que debe subir un nivel desde la ubicación del archivo CSS.
 El navegador pudo encontrar correctamente el archivo SVG y cargarlo como fondo.
+
+# FASE 2: Manipulación del DOM con JavaScript
+
+## Descripción  
+Este proyecto muestra ejemplos prácticos de manipulación del DOM utilizando **JavaScript moderno** (ES6+). El código está organizado en funciones reutilizables para seleccionar, modificar, crear y eliminar elementos del DOM, además de aplicar estilos dinámicamente.  
+
+## Funcionalidades  
+
+### 1. Seleccionar y acceder a elementos del DOM  
+
+La función **`selectElements`** demuestra cómo acceder a elementos del DOM mediante distintos métodos:  
+
+https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/5f418ced930f07b7ff1089dda3b7ae96768d37c2/js/script.js#L7-L25
+
+**Métodos utilizados:**  
+- `getElementById()`  
+- `getElementsByClassName()`  
+- `querySelector()`  
+- `querySelectorAll()`  
+
+### 2. Crear y añadir elementos dinámicamente  
+
+La función **`addJoinButton`** crea un nuevo botón y lo añade al contenedor de la newsletter:  
+
+https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/5f418ced930f07b7ff1089dda3b7ae96768d37c2/js/script.js#L31-L46
+
+**Métodos utilizados:**  
+- `document.createElement()` — Crea un nuevo elemento.  
+- `element.appendChild()` — Añade el elemento creado como hijo del contenedor.  
+- `classList.add()` — Añade clases CSS dinámicamente.  
+
+### 3. Modificar contenido y atributos de elementos existentes  
+
+La función **`modifyContentAndAttributes`** cambia el texto del título de la newsletter y actualiza el placeholder del campo de email:  
+
+https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/5f418ced930f07b7ff1089dda3b7ae96768d37c2/js/script.js#L52-L68
+
+**Métodos utilizados:**  
+- `textContent` — Modifica el contenido de texto de un elemento.  
+- `setAttribute()` — Cambia atributos de un elemento (como el placeholder).  
+
+### 4. Eliminar elementos del DOM  
+
+La función **`removeFirstFAQ`** elimina el primer elemento FAQ, validando que el contenedor y el ítem existan:  
+
+https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/5f418ced930f07b7ff1089dda3b7ae96768d37c2/js/script.js#L74-L91
+
+**Métodos utilizados:**  
+- `querySelector()` — Seleccionar elementos.  
+- `remove()` — Elimina directamente un elemento del DOM.  
+- `contains()` — Verifica si un elemento contiene otro (para evitar errores).  
+
+### 5. Manipular estilos dinámicamente  
+
+La función **`addHeaderHoverEffects`** cambia dinámicamente el color de fondo del header al pasar el ratón:  
+
+https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/5f418ced930f07b7ff1089dda3b7ae96768d37c2/js/script.js#L97-L115
+
+**Métodos utilizados:**  
+- `addEventListener()` — Añadir eventos (`mouseover`, `mouseout`).  
+- `style` — Modificar propiedades CSS directamente desde JavaScript.  
+
+Este proyecto ofrece una introducción clara y estructurada a la manipulación del DOM en JavaScript moderno.  
+Cada función está diseñada para ser reutilizable, manteniendo el código limpio y fácil de escalar.
+
