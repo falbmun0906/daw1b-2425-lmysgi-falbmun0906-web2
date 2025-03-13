@@ -94,22 +94,57 @@ removeFirstFAQ();
 // 5. Manipular estilos dinámicamente
 // ==========================
 
-const addHeaderHoverEffects = () => {
-    const header = document.querySelector('.header');
-    if (header) {
-        // Cambiar color de fondo al pasar el ratón
-        header.addEventListener('mouseover', () => {
-            header.style.backgroundColor = '#E8B8CF';
-        });
-
-        // Restaurar el color original al quitar el ratón
-        header.addEventListener('mouseout', () => {
-            header.style.backgroundColor = '';
-        });
-
-    } else {
-        console.log('El elemento header no existe.');
+// Función para activar el modo oscuro
+const activateDarkMode = () => {
+    const root = document.documentElement;
+    const headerBackground = document.querySelector('.header__background');
+    const toggleLabel = document.querySelector('.toggle-label i');  // Aseguramos que toggleLabel siempre sea el ícono
+    
+    root.style.setProperty('--color-primario', '#2c2c2c');
+    root.style.setProperty('--color-secundario', 'transparent'); // Header transparente
+    root.style.setProperty('--color-acento', '#3a3a3a');
+    root.style.setProperty('--color-fondo', '#121212');
+    root.style.setProperty('--color-texto', '#f5f5f5');
+    
+    // Cambia el fondo general y el del header para el modo noche
+    document.body.style.backgroundImage = "url('assets/backgrounds/liquid-cheese-black.svg')";
+    headerBackground.style.backgroundImage = "url('assets/backgrounds/liquid-cheese-black.svg')";
+    
+    if (toggleLabel) {
+      toggleLabel.classList.remove('fa-sun');
+      toggleLabel.classList.add('fa-moon');
     }
-};
-
-addHeaderHoverEffects();
+  };
+  
+  // Función para restaurar el modo claro
+  const activateLightMode = () => {
+    const root = document.documentElement;
+    const headerBackground = document.querySelector('.header__background');
+    const toggleLabel = document.querySelector('.toggle-label i');  // Aseguramos que toggleLabel siempre sea el ícono
+    
+    root.style.setProperty('--color-primario', '#b5c6d8');
+    root.style.setProperty('--color-secundario', '#90A8C3');
+    root.style.setProperty('--color-acento', '#F4CAE0');
+    root.style.setProperty('--color-fondo', '#D7B9D5');
+    root.style.setProperty('--color-texto', '#ffffff');
+    
+    // Restaura el fondo general y el del header al modo claro
+    document.body.style.backgroundImage = "url('assets/backgrounds/liquid-cheese.svg')";
+    headerBackground.style.backgroundImage = "url('assets/backgrounds/sssurf.svg')";
+    
+    if (toggleLabel) {
+      toggleLabel.classList.remove('fa-moon');
+      toggleLabel.classList.add('fa-sun');
+    }
+  };
+  
+  // Función para activar o desactivar el modo oscuro
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  darkModeToggle.addEventListener('change', () => {
+    const toggleLabel = document.querySelector('.toggle-label i'); // Aseguramos que siempre se encuentra el ícono
+    if (darkModeToggle.checked) {
+      activateDarkMode();
+    } else {
+      activateLightMode();
+    }
+  });

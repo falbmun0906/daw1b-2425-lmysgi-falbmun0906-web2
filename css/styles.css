@@ -146,7 +146,7 @@ body {
     background-repeat: no-repeat;
     z-index: -1;
     min-width: 1245px;
-    animation: moveBackground 1.0s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;; /* Aplica la animación */
+    animation: moveBackground 1.0s cubic-bezier(0.25, 0.8, 0.25, 1) forwards; /* Aplica la animación */
 }
 
 .header__logo {
@@ -199,6 +199,88 @@ header a {
 main {
     padding: 0 15vw;
 }
+
+/* Contenedor del slider */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Texto del modo noche */
+  .toggle-label {
+    font-family: var(--fuente-1);
+    font-size: 1.2rem;
+    color: var(--color-texto);
+  }
+  
+  /* Estilo del switch */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* Slider visual */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-primario);
+    border: 2px solid var(--color-fondo);
+    transition: .4s;
+    border-radius: 25px;
+  }
+  
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 2.2px;
+    background-color: var(--color-texto);
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--color-secundario);
+  }
+  
+  input:checked + .slider::before {
+    transform: translateX(24px);
+  }
+  
+  /* Responsivo */
+  @media (max-width: 945px) {
+    .toggle-label {
+      font-size: 1rem;
+    }
+    .switch {
+      width: 40px;
+      height: 20px;
+    }
+    .slider::before {
+      height: 14px;
+      width: 14px;
+      bottom: 1.2px;
+    }
+
+    input:checked + .slider::before {
+        transform: translateX(15px);
+      }
+  }
 
 /* ------------------------------------------------------- */
 /* ---------------------------------------- PÁGINA INDEX - */
