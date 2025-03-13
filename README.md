@@ -210,14 +210,73 @@ https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/5f418ced9
 
 ### 5. Manipular estilos dinámicamente  
 
-La función **`addHeaderHoverEffects`** cambia dinámicamente el color de fondo del header al pasar el ratón:  
+# 5. Activar y Desactivar el Modo Oscuro/Claro
 
-https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/5f418ced930f07b7ff1089dda3b7ae96768d37c2/js/script.js#L97-L115
+La funcionalidad de **modo oscuro** y **modo claro** permite al usuario alternar entre diferentes esquemas de colores en la página, activando un fondo oscuro o claro según la preferencia. Estas funciones modifican propiedades CSS directamente y cambian íconos, creando una experiencia visual dinámica.
 
-**Métodos utilizados:**  
-- `addEventListener()` — Añadir eventos (`mouseover`, `mouseout`).  
-- `style` — Modificar propiedades CSS directamente desde JavaScript.  
+**Código:**  
 
-Este proyecto ofrece una introducción clara y estructurada a la manipulación del DOM en JavaScript moderno.  
-Cada función está diseñada para ser reutilizable, manteniendo el código limpio y fácil de escalar.
+https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/0fa2937d287008b319f12563eb5e2f3cf72e3913/js/script.js#L98-L150
 
+### Función **`activateDarkMode`**
+
+Esta función activa el modo oscuro en la página. Cambia los colores del esquema general de la interfaz, el fondo de la página y el encabezado, así como el ícono en el interruptor de modo oscuro (de sol a luna).
+
+**Métodos utilizados:**
+
+- `style.setProperty()` — Modifica las propiedades CSS dinámicamente.
+- `classList.add()` y `classList.remove()` — Cambia las clases del ícono para actualizar la imagen del sol a la luna.
+
+**Comportamiento:**
+
+1. **Esquema de colores:**  
+   Ajusta los valores de las variables CSS del `:root` para aplicar un esquema de colores más oscuro.
+
+2. **Fondo de la página:**  
+   Cambia la imagen de fondo del `body` y el encabezado a una versión más oscura.
+
+3. **Ícono del interruptor:**  
+   Cambia el ícono de modo oscuro del sol a la luna (iconos `fa-sun` a `fa-moon`).
+
+https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/0fa2937d287008b319f12563eb5e2f3cf72e3913/js/script.js#L98-L117
+
+### Función **`activateLightMode`**
+
+Esta función restaura el modo claro. Restaura el esquema de colores, los fondos de la página y del encabezado, y cambia el ícono del interruptor de luna a sol.
+
+**Métodos utilizados:**
+
+- `style.setProperty()` — Modifica las propiedades CSS dinámicamente.
+- `classList.add()` y `classList.remove()` — Cambia las clases del ícono para actualizar la imagen de la luna al sol.
+
+**Comportamiento:**
+
+1. **Esquema de colores:**  
+   Restaura las variables CSS del `:root` a colores más claros.
+
+2. **Fondo de la página:**  
+   Restaura las imágenes de fondo del `body` y el encabezado a las versiones originales (más claras).
+
+3. **Ícono del interruptor:**  
+   Cambia el ícono de modo oscuro de la luna al sol (iconos `fa-moon` a `fa-sun`).
+
+https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/0fa2937d287008b319f12563eb5e2f3cf72e3913/js/script.js#L120-L139
+
+### Función **`darkModeToggle.addEventListener('change')`**
+
+Esta función se activa cuando el interruptor de modo oscuro (checkbox) cambia de estado (es decir, cuando el usuario lo marca o desmarca). Dependiendo del estado del interruptor, se activa el modo oscuro o el modo claro.
+
+**Métodos utilizados:**
+
+- `addEventListener()` — Escucha el evento de cambio (`change`) en el interruptor de modo oscuro.
+- **Condicionales** — Cambia entre los modos llamando a `activateDarkMode()` o `activateLightMode()`.
+
+**Comportamiento:**
+
+1. **Modo oscuro activado:**  
+   Si el interruptor está marcado, se activa el modo oscuro.
+
+2. **Modo claro activado:**  
+   Si el interruptor no está marcado, se activa el modo claro.
+
+https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/0fa2937d287008b319f12563eb5e2f3cf72e3913/js/script.js#L142-L150
