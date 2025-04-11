@@ -179,6 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
 // ==========================
 // 4. (PRODUCTS) Crear un flujo libre del proyecto: proceso de incluir productos al carrito de compra.
 // ==========================
@@ -194,68 +195,63 @@ document.addEventListener("DOMContentLoaded", () => {
   // Array para guardar los productos en el carrito
   let cartItems = [];
 
-  // Mostrar/ocultar el carrito cuando se hace clic en el icono
+  // Mostrar el carrito cuando se hace clic en el icono del carrito
   openCartButton.addEventListener("click", (e) => {
-    e.stopPropagation();
-    cartDropdown.style.display = cartDropdown.style.display === "block" ? "none" : "block";
+    e.stopPropagation(); // Prevenir que el evento de clic se propague a otros elementos
+    cartDropdown.style.display = cartDropdown.style.display === "block" ? "none" : "block"; // Toggle para mostrar u ocultar el carrito
   });
 
-  // Cerrar el carrito si se hace clic fuera
+  // Cerrar el carrito si se hace clic fuera del carrito
   document.addEventListener("click", (e) => {
     if (!cartDropdown.contains(e.target) && !openCartButton.contains(e.target)) {
-      cartDropdown.style.display = "none";
+      cartDropdown.style.display = "none";  // Cerrar el carrito si se hace clic fuera
     }
   });
 
   // Función para añadir productos al carrito
   const addToCart = (productName, productPrice) => {
+    // Añadir el producto al carrito (usamos un objeto con el nombre y precio)
     cartItems.push({ name: productName, price: productPrice });
+
+    // Actualizar el contenido del carrito
     updateCartUI();
   };
 
   // Función para actualizar la interfaz del carrito
   const updateCartUI = () => {
+    // Limpiar el carrito actual
     cartItemsContainer.innerHTML = "";
 
-    cartItems.forEach((item, index) => {
+    // Añadir productos al carrito
+    cartItems.forEach(item => {
       const cartItem = document.createElement("li");
       cartItem.classList.add("cart__item");
-
       cartItem.innerHTML = `
         <p>${item.name}</p>
         <p>${item.price}</p>
-        <button class="cart__remove-btn" data-index="${index}">X</button>
       `;
-
       cartItemsContainer.appendChild(cartItem);
     });
 
-    // Botones para eliminar productos
-    const removeButtons = document.querySelectorAll(".cart__remove-btn");
-    removeButtons.forEach(button => {
-      button.addEventListener("click", (e) => {
-        const index = parseInt(e.target.dataset.index, 10);
-        cartItems.splice(index, 1);
-        updateCartUI();
-      });
-    });
-
-    // Total del carrito
+    // Actualizar el total del carrito
     const total = cartItems.reduce((acc, item) => acc + parseFloat(item.price.replace(" €", "")), 0);
     cartTotal.textContent = `${total.toFixed(2)} €`;
 
-    // Contador de productos
+    // Actualizar el contador de productos en el carrito
     cartCount.textContent = cartItems.length;
   };
 
-  // Evento para los botones de "Añadir al carrito"
+  // Agregar evento a los botones de "Añadir al carrito"
   const cartButtons = document.querySelectorAll(".product__cart-button");
   cartButtons.forEach(button => {
     button.addEventListener("click", (event) => {
       const product = event.target.closest(".product");
       const productName = product.querySelector(".product__name").textContent;
       const productPrice = product.querySelector(".product__price").textContent;
+
+      // Llamar a la función para añadir al carrito
       addToCart(productName, productPrice);
     });
   });
 });
+
