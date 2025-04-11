@@ -23,12 +23,41 @@
         <a href="/" class="header__logo-link">
             <img class="header__logo" src="assets/logo/logo2.png" alt="Logo">
         </a>
+    
+        <div class="toggle-container">
+            <label class="switch">
+              <input type="checkbox" id="darkModeToggle">
+              <span class="slider"></span>
+            </label>
+            <span class="toggle-label">
+              <i class="fas fa-sun"></i>
+            </span>
+          </div>
         <nav class="header__nav">
             <ul>
                 <li class="header__nav-item"><a href="index.html" class="header__nav-link">Inicio</a></li>
                 <li class="header__nav-item"><a href="products.html" class="header__nav-link">Productos</a></li>
                 <li class="header__nav-item"><a href="about.html" class="header__nav-link">Nosotros</a></li>
                 <li class="header__nav-item"><a href="blog.html" class="header__nav-link">Blog</a></li>
+                <li class="header__nav-item">
+                    <div class="header__cart">
+                        <button id="openCart" class="cart__toggle">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cartCount" class="cart__count">0</span>
+                        </button>
+                    
+                        <div id="cartDropdown" class="cart__dropdown">
+                        <h3 class="cart__title">Tu carrito</h3>
+                        <ul class="cart__items">
+                            <!-- Aquí se inyectan dinámicamente los productos -->
+                        </ul>
+                        <div class="cart__footer">
+                            <p class="cart__total">Total: <span id="cartTotal">0.00 €</span></p>
+                            <button class="cart__checkout-btn">Finalizar compra</button>
+                        </div>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
