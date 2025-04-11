@@ -162,6 +162,26 @@ El navegador pudo encontrar correctamente el archivo SVG y cargarlo como fondo.
 ## Descripción  
 Este proyecto muestra ejemplos prácticos de manipulación del DOM utilizando **JavaScript moderno** (ES6+). El código está organizado en funciones reutilizables para seleccionar, modificar, crear y eliminar elementos del DOM, además de aplicar estilos dinámicamente.  
 
+### Lenguajes de script relacionados con la web:
+JavaScript es el principal lenguaje de programación utilizado para la creación de aplicaciones web interactivas en el lado del cliente. Otros lenguajes de script como **HTML** y **CSS** se utilizan para estructurar el contenido y estilizar la apariencia de las páginas, pero es JavaScript el que permite la interacción dinámica con el usuario, como responder a eventos, manipular el contenido y el diseño de la página en tiempo real, y realizar tareas asincrónicas como las peticiones a servidores.
+
+### Características clave de JavaScript moderno (ES6+):
+Con la llegada de **ECMAScript 6 (ES6)**, también conocido como JavaScript moderno, se introdujeron varias mejoras en la sintaxis y funcionalidad del lenguaje. Estas actualizaciones incluyen características que simplifican el desarrollo, mejoran la legibilidad del código y permiten escribir aplicaciones más eficientes y fáciles de mantener.
+
+#### Variables `let` y `const`:
+Estas nuevas formas de declarar variables ayudan a gestionar mejor el alcance y la mutabilidad de las mismas. `let` se usa para declarar variables cuyo valor puede cambiar, mientras que `const` se utiliza para declarar valores constantes que no deben ser reasignados.
+
+#### Funciones Flecha (`=>`):
+Esta sintaxis de función más compacta reemplaza la palabra clave `function` y ofrece ventajas como la eliminación de la confusión con el contexto de `this`. Las **arrow functions** son especialmente útiles cuando se trabaja con funciones anónimas o callbacks.
+
+#### Template Literals:
+La interpolación de cadenas con las **template literals** permite incorporar variables directamente dentro de cadenas de texto sin necesidad de concatenarlas. Esto simplifica la construcción de strings complejos, mejorando la legibilidad y reduciendo la probabilidad de errores.
+
+### Razón para usar sintaxis moderna (ES6+):
+El uso de la sintaxis moderna de JavaScript, como las funciones flecha y las nuevas formas de declarar variables, tiene varios beneficios. Facilita la escritura de código más limpio y conciso, reduce la posibilidad de errores comunes, y permite una mayor claridad al gestionar el contexto de `this` dentro de las funciones. Además, la utilización de plantillas literales mejora la manipulación de cadenas de texto al permitir una inclusión más intuitiva de valores dentro de ellas.
+
+JavaScript moderno (ES6+) no solo mejora la eficiencia del desarrollo, sino que también hace que el código sea más fácil de leer, mantener y escalar, lo que es esencial para aplicaciones web interactivas y dinámicas.
+
 ## Funcionalidades  
 
 ### 1. Seleccionar y acceder a elementos del DOM  
@@ -210,14 +230,337 @@ https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/5f418ced9
 
 ### 5. Manipular estilos dinámicamente  
 
-La función **`addHeaderHoverEffects`** cambia dinámicamente el color de fondo del header al pasar el ratón:  
+# 5. Activar y Desactivar el Modo Oscuro/Claro
 
-https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/5f418ced930f07b7ff1089dda3b7ae96768d37c2/js/script.js#L97-L115
+La funcionalidad de **modo oscuro** y **modo claro** permite al usuario alternar entre diferentes esquemas de colores en la página, activando un fondo oscuro o claro según la preferencia. Estas funciones modifican propiedades CSS directamente y cambian íconos, creando una experiencia visual dinámica.
 
-**Métodos utilizados:**  
-- `addEventListener()` — Añadir eventos (`mouseover`, `mouseout`).  
-- `style` — Modificar propiedades CSS directamente desde JavaScript.  
+**Código:**  
 
-Este proyecto ofrece una introducción clara y estructurada a la manipulación del DOM en JavaScript moderno.  
-Cada función está diseñada para ser reutilizable, manteniendo el código limpio y fácil de escalar.
+https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/0fa2937d287008b319f12563eb5e2f3cf72e3913/js/script.js#L98-L150
 
+### Función **`activateDarkMode`**
+
+Esta función activa el modo oscuro en la página. Cambia los colores del esquema general de la interfaz, el fondo de la página y el encabezado, así como el ícono en el interruptor de modo oscuro (de sol a luna).
+
+**Métodos utilizados:**
+
+- `style.setProperty()` — Modifica las propiedades CSS dinámicamente.
+- `classList.add()` y `classList.remove()` — Cambia las clases del ícono para actualizar la imagen del sol a la luna.
+
+**Comportamiento:**
+
+1. **Esquema de colores:**  
+   Ajusta los valores de las variables CSS del `:root` para aplicar un esquema de colores más oscuro.
+
+2. **Fondo de la página:**  
+   Cambia la imagen de fondo del `body` y el encabezado a una versión más oscura.
+
+3. **Ícono del interruptor:**  
+   Cambia el ícono de modo oscuro del sol a la luna (iconos `fa-sun` a `fa-moon`).
+
+https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/0fa2937d287008b319f12563eb5e2f3cf72e3913/js/script.js#L98-L117
+
+### Función **`activateLightMode`**
+
+Esta función restaura el modo claro. Restaura el esquema de colores, los fondos de la página y del encabezado, y cambia el ícono del interruptor de luna a sol.
+
+**Métodos utilizados:**
+
+- `style.setProperty()` — Modifica las propiedades CSS dinámicamente.
+- `classList.add()` y `classList.remove()` — Cambia las clases del ícono para actualizar la imagen de la luna al sol.
+
+**Comportamiento:**
+
+1. **Esquema de colores:**  
+   Restaura las variables CSS del `:root` a colores más claros.
+
+2. **Fondo de la página:**  
+   Restaura las imágenes de fondo del `body` y el encabezado a las versiones originales (más claras).
+
+3. **Ícono del interruptor:**  
+   Cambia el ícono de modo oscuro de la luna al sol (iconos `fa-moon` a `fa-sun`).
+
+https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/0fa2937d287008b319f12563eb5e2f3cf72e3913/js/script.js#L120-L139
+
+### Función **`darkModeToggle.addEventListener('change')`**
+
+Esta función se activa cuando el interruptor de modo oscuro (checkbox) cambia de estado (es decir, cuando el usuario lo marca o desmarca). Dependiendo del estado del interruptor, se activa el modo oscuro o el modo claro.
+
+**Métodos utilizados:**
+
+- `addEventListener()` — Escucha el evento de cambio (`change`) en el interruptor de modo oscuro.
+- **Condicionales** — Cambia entre los modos llamando a `activateDarkMode()` o `activateLightMode()`.
+
+**Comportamiento:**
+
+1. **Modo oscuro activado:**  
+   Si el interruptor está marcado, se activa el modo oscuro.
+
+2. **Modo claro activado:**  
+   Si el interruptor no está marcado, se activa el modo claro.
+
+https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/0fa2937d287008b319f12563eb5e2f3cf72e3913/js/script.js#L142-L150
+
+# FASE 3: Funcionalidades Interactivas.
+
+### Función **`thumbnail.addEventListener('click')`**
+
+Esta función se activa cuando el usuario hace clic en una miniatura de imagen (`.gallery__thumbnail`) dentro de un producto destacado. Permite **cambiar dinámicamente la imagen principal del producto** sin recargar la página.
+
+**Métodos utilizados:**
+
+- `querySelectorAll()` — Selecciona todos los productos (`.product`) y, dentro de cada uno, sus miniaturas.
+- `addEventListener('click')` — Añade un evento a cada miniatura para detectar cuándo el usuario hace clic.
+- **Manipulación del DOM** — Se cambia el atributo `src` de la imagen principal (`.product__image`) para actualizarla con la imagen seleccionada.
+
+**Modificaciones en HTML**
+
+Para implementar la funcionalidad de cambiar la imagen principal del producto al hacer clic en una miniatura, ha sido necesario añadir al documento HTML un conjunto de miniaturas por cada producto destacado. Al hacer clic en cualquiera de las miniaturas, la imagen principal se actualiza dinámicamente sin recargar la página.
+
+```html
+<div class="product">
+    <img class="product__image" src="path-to-main-image.jpg" alt="Imagen principal del producto">
+    <div class="gallery__thumbnails">
+        <img class="gallery__thumbnail" src="path-to-thumbnail-1.jpg" alt="Miniatura 1">
+        <img class="gallery__thumbnail" src="path-to-thumbnail-2.jpg" alt="Miniatura 2">
+        <img class="gallery__thumbnail" src="path-to-thumbnail-3.jpg" alt="Miniatura 3">
+    </div>
+</div>
+```
+
+**Comportamiento:**
+
+1. **El usuario ve un producto con varias miniaturas debajo.**  
+   Cada miniatura representa una vista distinta del producto.
+
+2. **El usuario hace clic en una miniatura.**  
+   Se actualiza la imagen principal del producto con la imagen de esa miniatura.
+
+3. **La experiencia de compra es más rica e interactiva.**  
+   El cliente puede ver el producto desde distintos ángulos o en distintos colores.
+
+**Fragmento relevante del código:**
+
+```js
+document.addEventListener('DOMContentLoaded', () => {
+    const products = document.querySelectorAll('.product');
+
+    products.forEach(product => {
+        const thumbnails = product.querySelectorAll('.gallery__thumbnail');
+        const mainImage = product.querySelector('.product__image');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', () => {
+                mainImage.src = thumbnail.src;
+            });
+        });
+    });
+});
+```
+
+### Función **`Formulario con validación dinámica y mensajes de error o éxito`**
+
+Esta función permite gestionar la validación dinámica de un formulario en una página web, mostrando mensajes de error o éxito según la interacción del usuario. Al intentar enviar el formulario, se verifica que todos los campos requeridos sean correctos, mostrando los mensajes apropiados sin necesidad de recargar la página.
+
+**Métodos utilizados:**
+
+- `addEventListener('submit')` — Añade un evento al formulario para escuchar cuando se intente enviar.
+- `preventDefault()` — Evita que el formulario se envíe de manera convencional y recargue la página.
+- `querySelectorAll()` — Selecciona todos los campos del formulario que son requeridos.
+- `classList.add()` y `classList.remove()` — Añade o elimina clases CSS de los campos para resaltar errores de validación.
+- `textContent` — Modifica el texto de un contenedor para mostrar mensajes de error o éxito.
+- `focus()` — Coloca el foco en el primer campo inválido para mejorar la experiencia del usuario.
+
+**Modificaciones en HTML**
+
+Para implementar la funcionalidad, se ha añadido un contenedor para mostrar mensajes de validación, como "¡Registro exitoso!" o "Por favor, complete todos los campos correctamente.".
+
+```html
+<div class="main__community__form-container">
+    <form>
+        <input type="text" id="name" required placeholder="Nombre">
+        <input type="email" id="email" required placeholder="Correo electrónico">
+        <button type="submit">Enviar</button>
+         ...
+    </form>
+    <div id="form-message" class="form-message"></div>
+</div>
+```
+
+**Comportamiento:**
+
+1. **El formulario es enviado.**  
+   Cuando el usuario hace clic en el botón de envío, la función de validación es activada para verificar los campos requeridos.
+
+2. **Validación de los campos.**  
+   La función recorre todos los campos requeridos del formulario y verifica si están vacíos o si el email ingresado es inválido. Si alguno no cumple con los requisitos, se resalta el campo en rojo y se detiene el proceso.
+
+3. **Mensajes de error o éxito.**  
+   Si todos los campos son correctos, se muestra un mensaje de éxito ("¡Registro exitoso!"), y el formulario se reinicia. Si algún campo es inválido, se muestra un mensaje de error y se resalta el campo que tiene el problema.
+
+4. **Interacción fluida.**  
+   Los mensajes se muestran de manera dinámica sin necesidad de recargar la página, y el usuario puede corregir fácilmente los errores al ser guiado visualmente.
+
+**Fragmento relevante del código:**
+
+```js
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('.main__community__form-container form');
+  const inputs = form.querySelectorAll('input[required]');
+  const messageContainer = document.getElementById('form-message');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault(); // Previene el envío por defecto
+
+    let isValid = true;
+    let firstInvalidInput = null;
+
+    // Limpia mensajes anteriores
+    messageContainer.textContent = '';
+    messageContainer.className = 'form-message';
+
+    // Recorre todos los campos requeridos
+    inputs.forEach(input => {
+      input.classList.remove('input-error');
+      if (!input.value.trim()) {
+        isValid = false;
+        input.classList.add('input-error');
+        if (!firstInvalidInput) firstInvalidInput = input;
+      } else if (input.type === 'email' && !validateEmail(input.value)) {
+        isValid = false;
+        input.classList.add('input-error');
+        if (!firstInvalidInput) firstInvalidInput = input;
+      }
+    });
+
+    if (!isValid) {
+      messageContainer.textContent = 'Por favor, completa todos los campos correctamente.';
+      messageContainer.classList.add('error');
+      firstInvalidInput.focus();
+    } else {
+      messageContainer.textContent = '¡Registro exitoso!';
+      messageContainer.classList.add('success');
+      form.reset();
+    }
+  });
+
+  function validateEmail(email) {
+    // Validación simple de email
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+});
+```
+
+### Función **`Filtrado de perros de adopción con mensaje de "No se han encontrado coincidencias"`**
+
+Esta función gestiona el filtrado dinámico de una lista de perros en adopción según los criterios seleccionados por el usuario. Cuando el formulario de filtros es enviado, se verifican los criterios de búsqueda y se muestran u ocultan los perros según las opciones seleccionadas. Si no hay resultados que coincidan con los filtros, se muestra un mensaje indicando que no se encontraron coincidencias.
+
+**Métodos utilizados:**
+
+- `addEventListener('submit')` — Añade un evento al formulario para escuchar cuando se intente enviar.
+- `preventDefault()` — Evita que la página se recargue cuando el formulario es enviado.
+- `querySelectorAll()` — Selecciona todos los perros de la lista para poder aplicar el filtrado.
+- `textContent` — Modifica el texto de un contenedor para mostrar el mensaje "No se han encontrado coincidencias".
+- `style.display` — Controla la visibilidad de los perros y el mensaje de error, mostrándolos u ocultándolos según corresponda.
+
+**Modificaciones en HTML**
+
+Para implementar la funcionalidad de filtrado de perros de adopción en la página, ha sido necesario añadir al documento HTML una sección de filtros con un formulario interactivo. Este formulario permite a los usuarios seleccionar criterios específicos para filtrar los perros en adopción. Los filtros incluyen opciones para la raza, el tamaño, el nivel de actividad y la edad del perro.
+
+```html
+<section class="main__adoption__filters">
+                <form id="adoption-filters">
+                    <select id="breed">
+                        <option value="all" selected>Raza</option>
+                        <option value="labrador">Labrador Retriever</option>
+                        <option value="border-collie">Border Collie</option>
+                        <option value="galgo-italiano">Galgo Italiano</option>
+                    </select>
+                
+                    <select id="size">
+                        <option value="all" selected>Tamaño</option>
+                        <option value="grande">Grande</option>
+                        <option value="mediano">Mediano</option>
+                        <option value="pequeño">Pequeño</option>
+                    </select>
+                
+                    <select id="activity">
+                        <option value="all" selected>Nivel de actividad</option>
+                        <option value="alto">Alto</option>
+                        <option value="moderado">Moderado</option>
+                        <option value="bajo">Bajo</option>
+                    </select>
+
+                    <select id="age">
+                        <option value="all" selected>Edad</option>
+                        <option value="1">1 año</option>
+                        <option value="4">4 años</option>
+                    </select>
+                
+                    <button type="submit">Filtrar</button>
+                </form>
+            </section>
+```
+
+**Comportamiento:**
+
+1. **El formulario es enviado.**  
+   Cuando el usuario hace clic en el botón de "Filtrar", la función de filtrado es activada para verificar los criterios seleccionados y procesar la lista de perros.
+
+2. **Filtrado de los perros.**  
+   La función recorre todos los perros en la página y verifica si coinciden con los filtros seleccionados para la raza, tamaño, nivel de actividad y edad. Si un perro no cumple con los criterios, se oculta; si cumple, se muestra.
+
+3. **Mensaje de "No se han encontrado coincidencias".**  
+   Si no hay perros que coincidan con los filtros, se muestra un mensaje debajo del formulario indicando que no se encontraron resultados.
+
+4. **Interacción fluida.**  
+   El filtrado se realiza de manera dinámica sin necesidad de recargar la página, y el usuario recibe un mensaje claro si no se encuentran coincidencias.
+
+**Fragmento relevante del código:**
+
+```js
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('adoption-filters');
+    const dogs = document.querySelectorAll('.main__adoption__card');
+    const noResultsMessage = document.querySelector('.no-results-message'); // Usamos la clase aquí
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault(); // Evitar que la página se recargue
+
+        const breed = document.getElementById('breed').value;
+        const size = document.getElementById('size').value;
+        const activity = document.getElementById('activity').value;
+        const age = document.getElementById('age').value;
+
+        let foundMatch = false; // Variable para saber si hay coincidencias
+
+        dogs.forEach(dog => {
+            const dogBreed = dog.querySelector('.main__adoption__breed').textContent.toLowerCase();
+            const dogSize = dog.querySelector('.main__adoption__size').textContent.toLowerCase();
+            const dogActivity = dog.querySelector('.main__adoption__activity').textContent.toLowerCase();
+            const dogAge = dog.querySelector('.main__adoption__age').textContent.toLowerCase();
+
+            // Comprobamos si el perro cumple con los filtros seleccionados
+            const matchesBreed = breed === 'all' || dogBreed.includes(breed);
+            const matchesSize = size === 'all' || dogSize.includes(size);
+            const matchesActivity = activity === 'all' || dogActivity.includes(activity);
+            const matchesAge = age === 'all' || dogAge.includes(age);
+
+            // Mostrar u ocultar el perro según si cumple con todos los filtros
+            if (matchesBreed && matchesSize && matchesActivity && matchesAge) {
+                dog.style.display = ''; // Mostrar el perro
+                foundMatch = true; // Si encontramos una coincidencia, marcamos que sí se encontraron
+            } else {
+                dog.style.display = 'none'; // Ocultar el perro
+            }
+        });
+
+        // Si no se encontró ninguna coincidencia, mostrar el mensaje
+        if (!foundMatch) {
+            noResultsMessage.style.display = 'block'; // Mostrar el mensaje
+        } else {
+            noResultsMessage.style.display = 'none'; // Ocultar el mensaje si hay resultados
+        }
+    });
+});
+```
