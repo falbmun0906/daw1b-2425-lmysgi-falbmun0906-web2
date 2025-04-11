@@ -303,7 +303,7 @@ https://github.com/falbmun0906/daw1b-2425-lmysgi-falbmun0906-web2/blob/0fa2937d2
 
 # FASE 3: Funcionalidades Interactivas.
 
-### Función **`thumbnail.addEventListener('click')`**
+### 1. Función **`thumbnail.addEventListener('click')`**
 
 Esta función se activa cuando el usuario hace clic en una miniatura de imagen (`.gallery__thumbnail`) dentro de un producto destacado. Permite **cambiar dinámicamente la imagen principal del producto** sin recargar la página.
 
@@ -374,7 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-### Función **`Formulario con validación dinámica y mensajes de error o éxito`**
+### 2. Función **`Formulario con validación dinámica y mensajes de error o éxito`**
 
 Esta función gestiona la validación dinámica de un formulario en una página web, mostrando mensajes de error o éxito según la interacción del usuario. Cuando el formulario se envía, se verifica que todos los campos sean correctos, mostrando los mensajes apropiados sin necesidad de recargar la página.
 
@@ -580,7 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
 Este enfoque proporciona una experiencia de usuario más fluida y controlada, guiando al usuario para corregir sus errores de manera eficiente sin recargar la página.
 
 
-### Función **`Filtrado de perros de adopción con mensaje de "No se han encontrado coincidencias"`**
+### 3. Función **`Filtrado de perros de adopción con mensaje de "No se han encontrado coincidencias"`**
 
 Esta función gestiona el filtrado dinámico de una lista de perros en adopción según los criterios seleccionados por el usuario. Cuando el formulario de filtros es enviado, se verifican los criterios de búsqueda y se muestran u ocultan los perros según las opciones seleccionadas. Si no hay resultados que coincidan con los filtros, se muestra un mensaje indicando que no se encontraron coincidencias.
 
@@ -704,7 +704,7 @@ const matchesBreed = breed === 'all' || dogBreed.includes(breed.replace('-', ' '
 
 Este cambio tiene como objetivo hacer que la comparación entre las razas funcione sin problemas, incluso cuando la raza contiene un guion. Esto asegura que se comparen las cadenas de texto correctamente, y que si se selecciona "border collie" en el filtro, se muestren todos los perros de esa raza, ya sea con o sin guion en su nombre.
 
-### Función **`Gestión dinámica del carrito de compras con botones de eliminación individuales`**
+### 4. Función **`Gestión dinámica del carrito de compras con botones de eliminación individuales`**
 
 Esta funcionalidad implementa un sistema de carrito de compras interactivo. Permite a los usuarios añadir productos desde tarjetas individuales, ver los productos en un dropdown dinámico y eliminarlos de forma individual con un botón `"X"`. Además, calcula el total de la compra y actualiza el contador de productos en tiempo real.
 
