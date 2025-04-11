@@ -31,6 +31,23 @@
                 <li class="header__nav-item"><a href="blog.html" class="header__nav-link">Blog</a></li>
             </ul>
         </nav>
+        <div class="header__cart">
+            <button id="openCart" class="cart__toggle">
+              <i class="fas fa-shopping-cart"></i>
+              <span id="cartCount" class="cart__count">0</span>
+            </button>
+          
+            <div id="cartDropdown" class="cart__dropdown">
+              <h3 class="cart__title">Tu carrito</h3>
+              <ul class="cart__items">
+                <!-- Aquí se inyectan dinámicamente los productos -->
+              </ul>
+              <div class="cart__footer">
+                <p class="cart__total">Total: <span id="cartTotal">0.00 €</span></p>
+                <button class="cart__checkout-btn">Finalizar compra</button>
+              </div>
+            </div>
+        </div>
     </header>
     <main class="main">
         <section class="main__products">
@@ -87,11 +104,15 @@
                     </p>
                     <a class="product__name" href="#">Bolso Paws - Azul</a>
                     <p class="product__price">74.90 €</p>
+                    <button class="product__cart-button" title="Añadir al carrito">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+
 
                     <div class="product__gallery">
-                        <img src="assets/novedades/bag-galgo.png" alt="Disfraz 1" class="gallery__thumbnail">
-                        <img src="assets/novedades/bag-galgo-2-2.png" alt="Disfraz 2" class="gallery__thumbnail">
-                        <img src="assets/novedades/bag-galgo-4-2.png" alt="Disfraz 3" class="gallery__thumbnail">
+                        <img src="assets/novedades/bag-galgo.png" alt="bag-galgo 1" class="gallery__thumbnail">
+                        <img src="assets/novedades/bag-galgo-2-2.png" alt="bag-galgo 2" class="gallery__thumbnail">
+                        <img src="assets/novedades/bag-galgo-4-2.png" alt="bag-galgo 3" class="gallery__thumbnail">
                     </div>
                 </article>
 
@@ -107,11 +128,15 @@
                     </p>
                     <a class="product__name" href="#">Collar Lazos - Salmón</a>
                     <p class="product__price">25.90 €</p>
+                    <button class="product__cart-button" title="Añadir al carrito">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+
 
                     <div class="product__gallery">
-                        <img src="assets/novedades/collar-lab.png" alt="Disfraz 1" class="gallery__thumbnail">
-                        <img src="assets/novedades/collar-lab-2-2.png" alt="Disfraz 2" class="gallery__thumbnail">
-                        <img src="assets/novedades/collar-lab-3-2.png" alt="Disfraz 3" class="gallery__thumbnail">
+                        <img src="assets/novedades/collar-lab.png" alt="collar-lab 1" class="gallery__thumbnail">
+                        <img src="assets/novedades/collar-lab-2-2.png" alt="collar-lab 2" class="gallery__thumbnail">
+                        <img src="assets/novedades/collar-lab-3-2.png" alt="collar-lab 3" class="gallery__thumbnail">
                     </div>
                 </article>
 
@@ -128,11 +153,15 @@
                     </p>
                     <a class="product__name" href="#">Mono rayas - Flamenco</a>
                     <p class="product__price">59,95 €</p>
+                    <button class="product__cart-button" title="Añadir al carrito">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+
 
                     <div class="product__gallery">
-                        <img src="assets/novedades/mono-galgo.png" alt="Disfraz 1" class="gallery__thumbnail">
-                        <img src="assets/novedades/mono-galgo-2-2.png" alt="Disfraz 2" class="gallery__thumbnail">
-                        <img src="assets/novedades/mono-galgo-3-2.png" alt="Disfraz 3" class="gallery__thumbnail">
+                        <img src="assets/novedades/mono-galgo.png" alt="mono-galgo 1" class="gallery__thumbnail">
+                        <img src="assets/novedades/mono-galgo-2-2.png" alt="mono-galgo 2" class="gallery__thumbnail">
+                        <img src="assets/novedades/mono-galgo-3-2.png" alt="mono-galgo 3" class="gallery__thumbnail">
                     </div>
                 </article>
 
@@ -149,11 +178,15 @@
                     </p>
                     <a class="product__name" href="#">Parka reversible - Lila / Verde</a>
                     <p class="product__price">69,95 €</p>
+                    <button class="product__cart-button" title="Añadir al carrito">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+
 
                     <div class="product__gallery">
-                        <img src="assets/novedades/parka.png" alt="Disfraz 1" class="gallery__thumbnail">
-                        <img src="assets/novedades/parka-2-2.png" alt="Disfraz 2" class="gallery__thumbnail">
-                        <img src="assets/novedades/parka-3-2.png" alt="Disfraz 3" class="gallery__thumbnail">
+                        <img src="assets/novedades/parka.png" alt="parka 1" class="gallery__thumbnail">
+                        <img src="assets/novedades/parka-2-2.png" alt="parka 2" class="gallery__thumbnail">
+                        <img src="assets/novedades/parka-3-2.png" alt="parka 3" class="gallery__thumbnail">
                     </div>
                 </article>
             </div>
@@ -356,6 +389,19 @@
             </p>
         </div>
     </footer>
+    <div id="cart" class="cart" style="display: none;">
+        <div class="cart__header">
+            <h2>Tu carrito</h2>
+            <button id="closeCart" class="cart__close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart__items">
+            <!-- Aquí se inyectarán dinámicamente los productos -->
+        </div>
+        <div class="cart__footer">
+            <p class="cart__total">Total: <span id="cartTotal">0.00 €</span></p>
+            <button class="cart__checkout">Finalizar compra</button>
+        </div>
+    </div>
     <script src="./js/script.js"></script>
 </body>
 </html>
