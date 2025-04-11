@@ -318,14 +318,30 @@ Esta función se activa cuando el usuario hace clic en una miniatura de imagen (
 Para implementar la funcionalidad de cambiar la imagen principal del producto al hacer clic en una miniatura, ha sido necesario añadir al documento HTML un conjunto de miniaturas por cada producto destacado. Al hacer clic en cualquiera de las miniaturas, la imagen principal se actualiza dinámicamente sin recargar la página.
 
 ```html
-<div class="product">
-    <img class="product__image" src="path-to-main-image.jpg" alt="Imagen principal del producto">
-    <div class="gallery__thumbnails">
-        <img class="gallery__thumbnail" src="path-to-thumbnail-1.jpg" alt="Miniatura 1">
-        <img class="gallery__thumbnail" src="path-to-thumbnail-2.jpg" alt="Miniatura 2">
-        <img class="gallery__thumbnail" src="path-to-thumbnail-3.jpg" alt="Miniatura 3">
-    </div>
-</div>
+<article class="featured__item product">
+        <img class="product__image" src="assets/novedades/parka.png" alt="Shure SM 7 B">
+        <p class="product__rating">
+            <i class="fas fa-paw"></i>
+            <i class="fas fa-paw"></i>
+            <i class="fas fa-paw"></i>
+            <i class="fas fa-paw"></i>
+
+            <span class="product__rating-score">(4.2)</span>
+            <span class="product__rating-reviews">17</span>
+        </p>
+        <a class="product__name" href="#">Parka reversible - Lila / Verde</a>
+        <p class="product__price">69,95 €</p>
+        <button class="product__cart-button" title="Añadir al carrito">
+            <i class="fas fa-shopping-cart"></i>
+        </button>
+
+
+        <div class="product__gallery">
+            <img src="assets/novedades/parka.png" alt="parka 1" class="gallery__thumbnail">
+            <img src="assets/novedades/parka-2-2.png" alt="parka 2" class="gallery__thumbnail">
+            <img src="assets/novedades/parka-3-2.png" alt="parka 3" class="gallery__thumbnail">
+        </div>
+</article>
 ```
 
 **Comportamiento:**
@@ -360,53 +376,93 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ### Función **`Formulario con validación dinámica y mensajes de error o éxito`**
 
-Esta función permite gestionar la validación dinámica de un formulario en una página web, mostrando mensajes de error o éxito según la interacción del usuario. Al intentar enviar el formulario, se verifica que todos los campos requeridos sean correctos, mostrando los mensajes apropiados sin necesidad de recargar la página.
+Esta función gestiona la validación dinámica de un formulario en una página web, mostrando mensajes de error o éxito según la interacción del usuario. Cuando el formulario se envía, se verifica que todos los campos sean correctos, mostrando los mensajes apropiados sin necesidad de recargar la página.
 
 **Métodos utilizados:**
 
-- `addEventListener('submit')` — Añade un evento al formulario para escuchar cuando se intente enviar.
-- `preventDefault()` — Evita que el formulario se envíe de manera convencional y recargue la página.
-- `querySelectorAll()` — Selecciona todos los campos del formulario que son requeridos.
-- `classList.add()` y `classList.remove()` — Añade o elimina clases CSS de los campos para resaltar errores de validación.
-- `textContent` — Modifica el texto de un contenedor para mostrar mensajes de error o éxito.
-- `focus()` — Coloca el foco en el primer campo inválido para mejorar la experiencia del usuario.
+- `addEventListener('submit')`: Añade un evento al formulario para escuchar cuando se intente enviar.
+- `preventDefault()`: Evita el envío convencional del formulario y recarga de la página.
+- `querySelectorAll()`: Selecciona todos los campos del formulario que se desean validar.
+- `classList.add()` y `classList.remove()`: Añade o elimina clases CSS de los campos para resaltar errores de validación.
+- `textContent`: Modifica el texto del contenedor para mostrar mensajes de error o éxito.
+- `focus()`: Coloca el foco en el primer campo inválido, mejorando la experiencia del usuario.
 
 **Modificaciones en HTML**
 
-Para implementar la funcionalidad, se ha añadido un contenedor para mostrar mensajes de validación, como "¡Registro exitoso!" o "Por favor, complete todos los campos correctamente.".
+Para implementar la funcionalidad de validación y mostrar mensajes de error o éxito, se añadió un contenedor para los mensajes de validación (por ejemplo, "¡Registro exitoso!" o "Por favor, complete todos los campos correctamente."):
 
 ```html
-<div class="main__community__form-container">
-    <form>
-        <input type="text" id="name" required placeholder="Nombre">
-        <input type="email" id="email" required placeholder="Correo electrónico">
-        <button type="submit">Enviar</button>
-         ...
-    </form>
-    <div id="form-message" class="form-message"></div>
-</div>
+<div class="main__community__container">
+            <section class="main__community__form-container">
+            <form action="#" method="post">
+                <ul class="main__community__form-list">
+                    <li class="main__community__form-item">
+                        <label for="dni"><i class="icon fa-solid fa-id-card"></i></label>
+                        <input type="text" id="dni" name="dni" placeholder="NIF/DNI">
+                    </li>
+                    <li class="main__community__form-item">
+                        <label for="first-name"><i class="icon fa-solid fa-user"></i></label>
+                        <input type="text" id="first-name" name="first-name" placeholder="Nombre">
+                    </li>
+                    <li class="main__community__form-item">
+                        <label for="last-name"><i class="icon fa-solid fa-signature"></i></label>
+                        <input type="text" id="last-name" name="last-name" placeholder="Apellidos">
+                    </li>
+                    <li class="main__community__form-item">
+                        <label for="address"><i class="icon fa-solid fa-location-dot"></i></label>
+                        <input type="text" id="address" name="address" placeholder="Dirección">
+                    </li>
+                    <li class="main__community__form-item">
+                        <label for="postal-code"><i class="icon fa-solid fa-envelopes-bulk"></i></label>
+                        <input type="text" id="postal-code" name="postal-code" placeholder="Código postal">
+                    </li>
+                    <li class="main__community__form-item">
+                        <label for="locality"><i class="icon fa-solid fa-city"></i></label>
+                        <input type="text" id="locality" name="locality" placeholder="Localidad">
+                    </li>
+                    <li class="main__community__form-item">
+                        <label for="country"><i class="icon fa-solid fa-globe"></i></label>
+                        <input type="text" id="country" name="country" placeholder="País">
+                    </li>
+                    <li class="main__community__form-item">
+                        <label for="email"><i class="icon fa-solid fa-envelope"></i></label>
+                        <input type="email" id="email" name="email" placeholder="Dirección e-mail">
+                    </li>
+                    <li class="main__community__form-item full-width">
+                        <div id="form-message" class="form-message"></div>
+                    </li>
+                    <li class="main__community__form-options">
+                        <button class="main__community__form-button" type="submit">Registrarse</button>
+                    </li>
+                </ul>
+            </form>
+            </section>
+            <section class="main__community__portrait">
+            <img src="assets/miscelanea/blog/register-background-w.webp" alt="Mascota feliz" class="main__community__image" />
+            </section>
+        </div>
 ```
 
 **Comportamiento:**
 
-1. **El formulario es enviado.**  
-   Cuando el usuario hace clic en el botón de envío, la función de validación es activada para verificar los campos requeridos.
+1. **El formulario es enviado:**  
+   Al hacer clic en el botón de envío, se activa la función de validación que verifica si los campos requeridos son correctos.
 
-2. **Validación de los campos.**  
-   La función recorre todos los campos requeridos del formulario y verifica si están vacíos o si el email ingresado es inválido. Si alguno no cumple con los requisitos, se resalta el campo en rojo y se detiene el proceso.
+2. **Validación de los campos:**  
+   La función recorre todos los campos requeridos del formulario y verifica si están vacíos o si el correo electrónico ingresado es inválido. Si algún campo no cumple con los requisitos, se resalta en rojo y el proceso de envío se detiene.
 
-3. **Mensajes de error o éxito.**  
-   Si todos los campos son correctos, se muestra un mensaje de éxito ("¡Registro exitoso!"), y el formulario se reinicia. Si algún campo es inválido, se muestra un mensaje de error y se resalta el campo que tiene el problema.
+3. **Mensajes de error o éxito:**  
+   Si todos los campos son correctos, se muestra un mensaje de éxito ("¡Registro exitoso!"), y el formulario se reinicia. Si algún campo es inválido, se muestra un mensaje de error en el contenedor de mensajes y se resalta el campo problemático.
 
-4. **Interacción fluida.**  
-   Los mensajes se muestran de manera dinámica sin necesidad de recargar la página, y el usuario puede corregir fácilmente los errores al ser guiado visualmente.
+4. **Interacción fluida:**  
+   Los mensajes de error o éxito se actualizan de forma dinámica sin necesidad de recargar la página, y el usuario puede corregir fácilmente los errores al ser guiado visualmente.
 
 **Fragmento relevante del código:**
 
 ```js
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.main__community__form-container form');
-  const inputs = form.querySelectorAll('input[required]');
+  const inputs = form.querySelectorAll('input');
   const messageContainer = document.getElementById('form-message');
 
   form.addEventListener('submit', (e) => {
@@ -415,41 +471,114 @@ document.addEventListener('DOMContentLoaded', () => {
     let isValid = true;
     let firstInvalidInput = null;
 
-    // Limpia mensajes anteriores
+    // Limpia los mensajes anteriores
     messageContainer.textContent = '';
-    messageContainer.className = 'form-message';
+    messageContainer.className = 'form-message'; // Asegura que no haya clases previas
 
-    // Recorre todos los campos requeridos
+    // Recorre todos los campos de entrada
     inputs.forEach(input => {
-      input.classList.remove('input-error');
+      input.classList.remove('input-error'); // Elimina los estilos de error previos
+
+      // Validación personalizada para cada campo
       if (!input.value.trim()) {
         isValid = false;
-        input.classList.add('input-error');
+        input.classList.add('input-error'); // Añade el estilo de error
         if (!firstInvalidInput) firstInvalidInput = input;
-      } else if (input.type === 'email' && !validateEmail(input.value)) {
-        isValid = false;
-        input.classList.add('input-error');
-        if (!firstInvalidInput) firstInvalidInput = input;
+        setErrorMessage('Por favor, completa todos los campos correctamente.');
+      } else {
+        switch (input.id) {
+          case 'dni':
+            if (!validateDNI(input.value)) {
+              isValid = false;
+              input.classList.add('input-error');
+              if (!firstInvalidInput) firstInvalidInput = input;
+              setErrorMessage('El DNI debe tener el siguiente formato: 12345678A');
+            }
+            break;
+          case 'first-name':
+          case 'last-name':
+          case 'locality':
+          case 'country':
+            if (!validateLetters(input.value)) {
+              isValid = false;
+              input.classList.add('input-error');
+              if (!firstInvalidInput) firstInvalidInput = input;
+              setErrorMessage('Este campo solo puede contener letras.');
+            }
+            break;
+          case 'postal-code':
+            if (!validatePostalCode(input.value)) {
+              isValid = false;
+              input.classList.add('input-error');
+              if (!firstInvalidInput) firstInvalidInput = input;
+              setErrorMessage('El código postal debe tener 5 dígitos.');
+            }
+            break;
+          case 'email':
+            if (!validateEmail(input.value)) {
+              isValid = false;
+              input.classList.add('input-error');
+              if (!firstInvalidInput) firstInvalidInput = input;
+              setErrorMessage('Por favor, introduce una dirección de correo válida.');
+            }
+            break;
+          default:
+            break;
+        }
       }
     });
 
-    if (!isValid) {
-      messageContainer.textContent = 'Por favor, completa todos los campos correctamente.';
-      messageContainer.classList.add('error');
-      firstInvalidInput.focus();
-    } else {
+    if (isValid) {
       messageContainer.textContent = '¡Registro exitoso!';
       messageContainer.classList.add('success');
       form.reset();
     }
+
+    if (firstInvalidInput) {
+      firstInvalidInput.focus();
+    }
   });
 
+  // Función para establecer el mensaje de error en el contenedor #form-message
+  function setErrorMessage(message) {
+    messageContainer.textContent = message;
+    messageContainer.classList.add('error');
+  }
+
+  // Función de validación para el DNI
+  function validateDNI(dni) {
+    const dniRegex = /^\d{8}[A-Za-z]$/;
+    return dniRegex.test(dni);
+  }
+
+  // Función de validación para solo letras (primer nombre, apellido, etc.)
+  function validateLetters(value) {
+    return /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/.test(value);
+  }
+
+  // Función de validación para el código postal (5 dígitos)
+  function validatePostalCode(postalCode) {
+    return /^\d{5}$/.test(postalCode);
+  }
+
+  // Función de validación para el correo electrónico
   function validateEmail(email) {
-    // Validación simple de email
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   }
 });
 ```
+
+**Nuevas validaciones y cambios en HTML:**
+
+1. **Eliminación de `required` en los campos del formulario.**  
+   Se eliminan los atributos `required` de los campos en el HTML, permitiendo que la validación y los mensajes de error se gestionen completamente con JavaScript.
+
+2. **Contenedor para el mensaje de validación.**  
+   Se ha añadido el `div` con el ID `form-message` para mostrar el mensaje de error o éxito de forma centralizada y dinámica.
+
+Este enfoque proporciona una experiencia de usuario más fluida y controlada, guiando al usuario para corregir sus errores de manera eficiente sin recargar la página.
+
 
 ### Función **`Filtrado de perros de adopción con mensaje de "No se han encontrado coincidencias"`**
 
@@ -469,37 +598,37 @@ Para implementar la funcionalidad de filtrado de perros de adopción en la pági
 
 ```html
 <section class="main__adoption__filters">
-                <form id="adoption-filters">
-                    <select id="breed">
-                        <option value="all" selected>Raza</option>
-                        <option value="labrador">Labrador Retriever</option>
-                        <option value="border-collie">Border Collie</option>
-                        <option value="galgo-italiano">Galgo Italiano</option>
-                    </select>
-                
-                    <select id="size">
-                        <option value="all" selected>Tamaño</option>
-                        <option value="grande">Grande</option>
-                        <option value="mediano">Mediano</option>
-                        <option value="pequeño">Pequeño</option>
-                    </select>
-                
-                    <select id="activity">
-                        <option value="all" selected>Nivel de actividad</option>
-                        <option value="alto">Alto</option>
-                        <option value="moderado">Moderado</option>
-                        <option value="bajo">Bajo</option>
-                    </select>
-
-                    <select id="age">
-                        <option value="all" selected>Edad</option>
-                        <option value="1">1 año</option>
-                        <option value="4">4 años</option>
-                    </select>
-                
-                    <button type="submit">Filtrar</button>
-                </form>
-            </section>
+       <form id="adoption-filters">
+           <select id="breed">
+               <option value="all" selected>Raza</option>
+               <option value="labrador">Labrador Retriever</option>
+               <option value="border-collie">Border Collie</option>
+               <option value="galgo-italiano">Galgo Italiano</option>
+           </select>
+       
+           <select id="size">
+               <option value="all" selected>Tamaño</option>
+               <option value="grande">Grande</option>
+               <option value="mediano">Mediano</option>
+               <option value="pequeño">Pequeño</option>
+           </select>
+       
+           <select id="activity">
+               <option value="all" selected>Nivel de actividad</option>
+               <option value="alto">Alto</option>
+               <option value="moderado">Moderado</option>
+               <option value="bajo">Bajo</option>
+           </select>
+   
+           <select id="age">
+               <option value="all" selected>Edad</option>
+               <option value="1">1 año</option>
+               <option value="4">4 años</option>
+           </select>
+       
+           <button type="submit">Filtrar</button>
+       </form>
+</section>
 ```
 
 **Comportamiento:**
@@ -541,7 +670,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const dogAge = dog.querySelector('.main__adoption__age').textContent.toLowerCase();
 
             // Comprobamos si el perro cumple con los filtros seleccionados
-            const matchesBreed = breed === 'all' || dogBreed.includes(breed);
+            const matchesBreed = breed === 'all' || dogBreed.includes(breed.replace('-', ' '));
             const matchesSize = size === 'all' || dogSize.includes(size);
             const matchesActivity = activity === 'all' || dogActivity.includes(activity);
             const matchesAge = age === 'all' || dogAge.includes(age);
@@ -562,5 +691,144 @@ document.addEventListener('DOMContentLoaded', () => {
             noResultsMessage.style.display = 'none'; // Ocultar el mensaje si hay resultados
         }
     });
+});
+```
+
+### Ajuste realizado:
+
+Se realizó un cambio para manejar correctamente los casos en los que el nombre de la raza contiene un guion, como "border-collie". El ajuste en el código se hizo reemplazando el guion (-) por un espacio (' ') antes de hacer la comparación en la línea:
+
+```js
+const matchesBreed = breed === 'all' || dogBreed.includes(breed.replace('-', ' '));
+```
+
+Este cambio tiene como objetivo hacer que la comparación entre las razas funcione sin problemas, incluso cuando la raza contiene un guion. Esto asegura que se comparen las cadenas de texto correctamente, y que si se selecciona "border collie" en el filtro, se muestren todos los perros de esa raza, ya sea con o sin guion en su nombre.
+
+### Función **`Gestión dinámica del carrito de compras con botones de eliminación individuales`**
+
+Esta funcionalidad implementa un sistema de carrito de compras interactivo. Permite a los usuarios añadir productos desde tarjetas individuales, ver los productos en un dropdown dinámico y eliminarlos de forma individual con un botón `"X"`. Además, calcula el total de la compra y actualiza el contador de productos en tiempo real.
+
+**Métodos utilizados**
+
+- **addEventListener("DOMContentLoaded")** — Inicia la funcionalidad al cargar el DOM.  
+- **addEventListener("click")** — Escucha eventos tanto para abrir/cerrar el carrito como para añadir o eliminar productos.  
+- **stopPropagation()** — Evita que el clic sobre el botón del carrito cierre el dropdown.  
+- **style.display** — Alterna la visibilidad del dropdown del carrito.  
+- **querySelector() / querySelectorAll()** — Accede a elementos del DOM como botones, contenedores, nombres y precios de productos.  
+- **createElement()** — Crea dinámicamente elementos de lista para los productos añadidos.  
+- **innerHTML** — Inyecta contenido HTML para mostrar productos.  
+- **textContent** — Muestra el total del carrito y la cantidad de productos.  
+- **splice()** — Elimina un producto específico del array `cartItems`.  
+- **closest()** — Encuentra el contenedor padre más cercano de un producto desde un botón de clic.
+
+**Estructura HTML utilizada**
+
+```html
+<div class="header__cart">
+  <button id="openCart" class="cart__toggle">
+    <i class="fas fa-shopping-cart"></i>
+    <span id="cartCount" class="cart__count">0</span>
+  </button>
+
+  <div id="cartDropdown" class="cart__dropdown">
+    <h3 class="cart__title">Tu carrito</h3>
+    <ul class="cart__items">
+      <!-- Aquí se inyectan dinámicamente los productos -->
+    </ul>
+    <div class="cart__footer">
+      <p class="cart__total">Total: <span id="cartTotal">0.00 €</span></p>
+      <button class="cart__checkout-btn">Finalizar compra</button>
+    </div>
+  </div>
+</div>
+```
+
+**Comportamiento general**
+
+1. **Mostrar/ocultar carrito**  
+   Al hacer clic en el botón del carrito (`#openCart`), el menú desplegable se alterna entre mostrar u ocultar (`#cartDropdown`). Si el usuario hace clic fuera del área del carrito, este se cierra automáticamente.
+
+2. **Añadir productos al carrito**  
+   Cada botón `.product__cart-button` extrae el nombre y precio de un producto desde su contenedor `.product`, y lo añade al array `cartItems`. Luego se actualiza la interfaz del carrito.
+
+3. **Renderizado dinámico del carrito**  
+   Por cada producto en `cartItems`, se crea un `<li>` con:
+   - Nombre del producto  
+   - Precio  
+   - Botón para eliminar (`X`)  
+
+4. **Eliminar productos individualmente**  
+   Cada botón `"X"` elimina el producto correspondiente del array y vuelve a renderizar la lista.
+
+5. **Cálculo del total y contador**  
+   Se recalcula el total en euros de todos los productos del carrito y se actualiza el contador de productos visibles junto al icono del carrito.
+
+**Fragmento relevante del código JavaScript**
+
+```js
+document.addEventListener("DOMContentLoaded", () => {
+  const cartDropdown = document.getElementById("cartDropdown");
+  const openCartButton = document.getElementById("openCart");
+  const cartCount = document.getElementById("cartCount");
+  const cartTotal = document.getElementById("cartTotal");
+  const cartItemsContainer = document.querySelector(".cart__items");
+
+  let cartItems = [];
+
+  openCartButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    cartDropdown.style.display = cartDropdown.style.display === "block" ? "none" : "block";
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!cartDropdown.contains(e.target) && !openCartButton.contains(e.target)) {
+      cartDropdown.style.display = "none";
+    }
+  });
+
+  const addToCart = (productName, productPrice) => {
+    cartItems.push({ name: productName, price: productPrice });
+    updateCartUI();
+  };
+
+  const updateCartUI = () => {
+    cartItemsContainer.innerHTML = "";
+
+    cartItems.forEach((item, index) => {
+      const cartItem = document.createElement("li");
+      cartItem.classList.add("cart__item");
+
+      cartItem.innerHTML = `
+        <p>${item.name}</p>
+        <p>${item.price}</p>
+        <button class="cart__remove-btn" data-index="${index}">X</button>
+      `;
+
+      cartItemsContainer.appendChild(cartItem);
+    });
+
+    const removeButtons = document.querySelectorAll(".cart__remove-btn");
+    removeButtons.forEach(button => {
+      button.addEventListener("click", (e) => {
+        const index = parseInt(e.target.dataset.index, 10);
+        cartItems.splice(index, 1);
+        updateCartUI();
+      });
+    });
+
+    const total = cartItems.reduce((acc, item) => acc + parseFloat(item.price.replace(" €", "")), 0);
+    cartTotal.textContent = `${total.toFixed(2)} €`;
+    cartCount.textContent = cartItems.length;
+  };
+
+  const cartButtons = document.querySelectorAll(".product__cart-button");
+  cartButtons.forEach(button => {
+    button.addEventListener("click", (event) => {
+      const product = event.target.closest(".product");
+      const productName = product.querySelector(".product__name").textContent;
+      const productPrice = product.querySelector(".product__price").textContent;
+      addToCart(productName, productPrice);
+    });
+  });
 });
 ```
